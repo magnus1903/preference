@@ -1394,8 +1394,7 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
-color color_primary_dark
-color color_primary_light
+color color_primary
 color color_secondary_dark
 color color_secondary_light
 color design_bottom_navigation_shadow_color

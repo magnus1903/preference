@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
-    <color name="color_primary_dark">#055823</color>
-    <color name="color_primary_light">#009688</color>
+    <color name="color_primary">#009688</color>
     <color name="color_secondary_dark">#000000</color>
     <color name="color_secondary_light">#C0C0C0</color>
     <dimen format="float" name="float_seek_bar_sound_effects_value_increment" ns1:keep="@dimen/float_seek_bar_sound_effects_value_increment" type="dimen">

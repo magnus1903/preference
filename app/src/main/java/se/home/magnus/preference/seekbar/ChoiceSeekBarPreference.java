@@ -90,8 +90,8 @@ public class ChoiceSeekBarPreference extends Preference implements LabelSeekBar.
         int id;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ChoiceSeekBar, 0, 0);
         try {
-            _thumbColor = typedArray.getColor(R.styleable.ChoiceSeekBar_choiceThumbColor, context.getColor(R.color.color_primary_dark));
-            _color = typedArray.getColor(R.styleable.ChoiceSeekBar_choiceColor, context.getColor(R.color.color_primary_dark));
+            _thumbColor = typedArray.getColor(R.styleable.ChoiceSeekBar_choiceThumbColor, context.getColor(R.color.color_primary));
+            _color = typedArray.getColor(R.styleable.ChoiceSeekBar_choiceColor, context.getColor(R.color.color_primary));
             _diameter = typedArray.getInt(R.styleable.ChoiceSeekBar_choiceDiameter, context.getResources().getInteger(R.integer.choice_seek_bar_ball_diameter_default_value));
             _size = typedArray.getInt(R.styleable.ChoiceSeekBar_choiceSize, context.getResources().getInteger(R.integer.choice_seek_bar_size_default_value));
             _defaultValue = typedArray.getInt(R.styleable.ChoiceSeekBar_choiceDefaultValue, 0);

@@ -33,8 +33,7 @@ int attr textLabels 0x0
 int attr textSize 0x0
 int attr textThumbColor 0x0
 int attr textValues 0x0
-int color color_primary_dark 0x0
-int color color_primary_light 0x0
+int color color_primary 0x0
 int color color_secondary_dark 0x0
 int color color_secondary_light 0x0
 int dimen float_seek_bar_sound_effects_value_increment 0x0

@@ -1,4 +1,4 @@
-#Sun Aug 04 15:00:05 CEST 2024
+#Tue Aug 06 13:20:20 CEST 2024
 base.0=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
 base.1=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeLibDexDebugAndroidTest\\1\\classes.dex
 base.2=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeLibDexDebugAndroidTest\\4\\classes.dex

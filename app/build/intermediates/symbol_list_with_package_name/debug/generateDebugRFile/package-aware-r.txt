@@ -34,8 +34,7 @@ attr textLabels
 attr textSize
 attr textThumbColor
 attr textValues
-color color_primary_dark
-color color_primary_light
+color color_primary
 color color_secondary_dark
 color color_secondary_light
 dimen float_seek_bar_sound_effects_value_increment

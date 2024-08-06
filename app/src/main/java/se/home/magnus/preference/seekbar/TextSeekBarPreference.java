@@ -91,8 +91,8 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
         CharSequence[] valueArray;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.TextSeekBar, 0, 0);
         try {
-            _thumbColor = typedArray.getColor(R.styleable.TextSeekBar_textThumbColor, context.getColor(R.color.color_primary_dark));
-            _color = typedArray.getColor(R.styleable.TextSeekBar_textColor, context.getColor(R.color.color_primary_dark));
+            _thumbColor = typedArray.getColor(R.styleable.TextSeekBar_textThumbColor, context.getColor(R.color.color_primary));
+            _color = typedArray.getColor(R.styleable.TextSeekBar_textColor, context.getColor(R.color.color_primary));
             _diameter = typedArray.getInt(R.styleable.TextSeekBar_textDiameter, context.getResources().getInteger(R.integer.text_seek_bar_ball_diameter_default_value));
             _size = typedArray.getInt(R.styleable.TextSeekBar_textSize, context.getResources().getInteger(R.integer.text_seek_bar_size_default_value));
             _defaultValue = typedArray.getFloat(R.styleable.TextSeekBar_textDefaultValue, 0);

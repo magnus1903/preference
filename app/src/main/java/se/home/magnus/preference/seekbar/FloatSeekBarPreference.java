@@ -162,8 +162,8 @@ public class FloatSeekBarPreference extends Preference {
             }
             _showSeekBarValue = a.getBoolean(R.styleable.FloatSeekBar_floatShowSeekBarValue, true);
             _valueFormat = "%." + a.getInt(R.styleable.FloatSeekBar_floatDecimalCount, context.getResources().getInteger(R.integer.float_seek_bar_decimal_count_default_value)) + "f";
-            _color = a.getColor(R.styleable.FloatSeekBar_floatColor, context.getColor(R.color.color_primary_light));
-            _thumbColor = a.getColor(R.styleable.FloatSeekBar_floatThumbColor, context.getColor(R.color.color_primary_light));
+            _color = a.getColor(R.styleable.FloatSeekBar_floatColor, context.getColor(R.color.color_primary));
+            _thumbColor = a.getColor(R.styleable.FloatSeekBar_floatThumbColor, context.getColor(R.color.color_primary));
             _diameter = a.getInt(R.styleable.FloatSeekBar_floatDiameter, context.getResources().getInteger(R.integer.float_seek_bar_ball_diameter_default_value));
             _size = a.getInt(R.styleable.FloatSeekBar_floatSize, context.getResources().getInteger(R.integer.float_seek_bar_size_default_value));
         } finally {

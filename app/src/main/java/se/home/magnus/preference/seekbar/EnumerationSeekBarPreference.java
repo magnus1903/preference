@@ -89,8 +89,8 @@ public class EnumerationSeekBarPreference extends Preference implements LabelSee
         super(context, attributeSet, 0);
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.EnumerationSeekBar, 0, 0);
         try {
-            _thumbColor = typedArray.getColor(R.styleable.EnumerationSeekBar_enumerationThumbColor, context.getColor(R.color.color_primary_dark));
-            _color = typedArray.getColor(R.styleable.EnumerationSeekBar_enumerationColor, context.getColor(R.color.color_primary_dark));
+            _thumbColor = typedArray.getColor(R.styleable.EnumerationSeekBar_enumerationThumbColor, context.getColor(R.color.color_primary));
+            _color = typedArray.getColor(R.styleable.EnumerationSeekBar_enumerationColor, context.getColor(R.color.color_primary));
             _diameter = typedArray.getInt(R.styleable.EnumerationSeekBar_enumerationDiameter, context.getResources().getInteger(R.integer.enumeration_seek_bar_ball_diameter_default_value));
             _size = typedArray.getInt(R.styleable.EnumerationSeekBar_enumerationSize, context.getResources().getInteger(R.integer.enumeration_seek_bar_size_default_value));
             if ((_defaultValue = typedArray.getString(R.styleable.EnumerationSeekBar_enumerationDefaultValue)) == null) {

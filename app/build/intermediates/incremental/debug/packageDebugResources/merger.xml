@@ -70,7 +70,7 @@
         <attr format="string" name="parsableDescription"/>
         
         <attr format="string" name="parsableDefaultValue"/>
-    </declare-styleable></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary_light">#009688</color><color name="color_primary_dark">#055823</color><color name="color_secondary_light">#C0C0C0</color><color name="color_secondary_dark">#000000</color></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\dimens.xml" qualifiers=""><dimen format="float" name="float_seek_bar_sound_volume_default_value" ns1:keep="@dimen/float_seek_bar_sound_volume_default_value" type="dimen">
+    </declare-styleable></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary">#009688</color><color name="color_secondary_light">#C0C0C0</color><color name="color_secondary_dark">#000000</color></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\dimens.xml" qualifiers=""><dimen format="float" name="float_seek_bar_sound_volume_default_value" ns1:keep="@dimen/float_seek_bar_sound_volume_default_value" type="dimen">
         1
     </dimen><dimen format="float" name="float_seek_bar_sound_volume_minimum_value" ns1:keep="@dimen/float_seek_bar_sound_volume_minimum_value" type="dimen">
         0

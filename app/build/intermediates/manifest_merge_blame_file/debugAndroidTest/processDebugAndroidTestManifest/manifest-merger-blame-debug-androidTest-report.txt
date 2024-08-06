@@ -3,24 +3,24 @@
 3    package="se.home.magnus.preference.test" >
 4
 5    <uses-sdk
-5-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:5:5-74
+5-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:5:5-74
 6        android:minSdkVersion="29"
-6-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:5:15-41
+6-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:5:15-41
 7        android:targetSdkVersion="29" />
-7-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:5:42-71
+7-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:5:42-71
 8
 9    <instrumentation
-9-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:11:5-15:80
+9-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:11:5-15:80
 10        android:name="android.test.InstrumentationTestRunner"
-10-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:11:22-75
+10-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:11:22-75
 11        android:functionalTest="false"
-11-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:14:22-52
+11-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:14:22-52
 12        android:handleProfiling="false"
-12-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:13:22-53
+12-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:13:22-53
 13        android:label="Tests for se.home.magnus.preference.test"
-13-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:15:22-78
+13-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:15:22-78
 14        android:targetPackage="se.home.magnus.preference.test" />
-14-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:12:22-76
+14-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:12:22-76
 15
 16    <permission
 16-->[androidx.core:core:1.13.0] C:\Users\magak\.gradle\caches\transforms-3\1f59dfcb2dfe833383ce166e44cd18f6\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
@@ -34,14 +34,14 @@
 20-->[androidx.core:core:1.13.0] C:\Users\magak\.gradle\caches\transforms-3\1f59dfcb2dfe833383ce166e44cd18f6\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 21
 22    <application
-22-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:7:5-9:19
+22-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:7:5-9:19
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.13.0] C:\Users\magak\.gradle\caches\transforms-3\1f59dfcb2dfe833383ce166e44cd18f6\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 24        android:debuggable="true"
 25        android:extractNativeLibs="false" >
 26        <uses-library android:name="android.test.runner" />
-26-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:8:9-60
-26-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest16689302887946510022.xml:8:23-57
+26-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:8:9-60
+26-->D:\Sandbox\AndroidStudioProjects\Preference\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest14731234539511345843.xml:8:23-57
 27
 28        <provider
 28-->[androidx.emoji2:emoji2:1.3.0] C:\Users\magak\.gradle\caches\transforms-3\ffcc7aaa9f253ea46ea0b1daf7726727\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
