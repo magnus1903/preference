@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- generic seek bar strings -->
-    <string name="generic_edit_text_dependency_error">The \"mandatory\" attribute \"fragment manager\" must be set.</string>
-    <string name="generic_seek_bar_change_dependency_error">The \"mandatory\" attribute \"seek bar change listener\" must be set.</string>
+    <string name="generic_edit_text_dependency_error">The \"mandatory\" attribute \"fragment manager\" must be assigned.</string>
+    <string name="generic_seek_bar_change_dependency_error">The \"mandatory\" attribute \"seek bar change listener\" must be assigned.</string>
     <string name="generic_seek_bar_value_label_array_error">The number of elements in the \"value array\" and the \"label array\" must be the same.</string>
     <string name="generic_seek_bar_value_error">The value must be a position index in the \"value array\".</string>
     <string name="generic_seek_bar_value_array_error">The \"value array\" is missing.</string>
@@ -24,4 +24,7 @@
     <!-- parsable edit text strings -->
     <string name="parsable_edit_text_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="parsable_edit_text_matching_error">The string \"%1$s\" does not match the regular expression \"%2$s\".</string>
+    <!-- button strings -->
+    <string name="button_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
+    <string name="button_dependency_error">The \"mandatory\" attribute \"click listener\" must be assigned.</string>
 </resources>

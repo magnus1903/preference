@@ -76,4 +76,12 @@
         <!-- a default text value-->
         <attr name="parsableDefaultValue" format="string" />
     </declare-styleable>
+    <declare-styleable name="ButtonPreference">
+        <!-- the color of the background -->
+        <attr name="buttonBackgroundColor" format="color" />
+        <!-- the color of the text -->
+        <attr name="buttonTextColor" format="color" />
+        <!-- the text -->
+        <attr name="buttonText" format="string" />
+    </declare-styleable>
 </resources>

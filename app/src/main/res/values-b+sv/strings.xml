@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- generic seek bar strings -->
-    <string name="generic_edit_text_dependency_error">Det \"obligatoriska\" attributet \"fragment manager\" måste sättas.</string>
-    <string name="generic_seek_bar_change_dependency_error">Det \"obligatoriska\" attributet \"seek bar change listener\" måste sättas.</string>
+    <string name="generic_edit_text_dependency_error">Det \"obligatoriska\" attributet \"fragment manager\" måste tilldels.</string>
+    <string name="generic_seek_bar_change_dependency_error">Det \"obligatoriska\" attributet \"seek bar change listener\" måste tilldels.</string>
     <string name="generic_seek_bar_value_label_array_error">Antalet element i \"value array\" och \"label array\" måste vara lika.</string>
     <string name="generic_seek_bar_value_error">Värdet måste vara ett positionsindex i \"value array\".</string>
     <string name="generic_seek_bar_value_array_error">Attributet \"value array\" saknas.</string>
@@ -24,4 +24,7 @@
     <!-- parsable edit text strings -->
     <string name="parsable_edit_text_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <string name="parsable_edit_text_matching_error">Strängen \"%1$s\" matchar inte reguljäruttrycket \"%2$s\".</string>
+    <!-- button strings -->
+    <string name="button_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
+    <string name="button_dependency_error">Det \"obligatoriska\" attributet \"click listener\" måste tilldelas.</string>
 </resources>
