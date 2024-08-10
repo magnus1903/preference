@@ -8,6 +8,7 @@ plugins {
 tasks.register('sourcesJar', Jar) {
     archiveClassifier = 'sources'
     from android.sourceSets.main.java.srcDirs
+    from android.sourceSets.main.res.srcDirs
 }
 
 artifacts {

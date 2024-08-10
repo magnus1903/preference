@@ -1,0 +1,13 @@
+#Sat Aug 10 12:03:44 CEST 2024
+base.0=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeLibDexDebugAndroidTest\\1\\classes.dex
+base.2=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeLibDexDebugAndroidTest\\4\\classes.dex
+base.3=D\:\\Sandbox\\AndroidStudioProjects\\Preference\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=classes.dex
+path.1=1/classes.dex
+path.2=4/classes.dex
+path.3=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex
+renamed.3=classes4.dex

@@ -1,12 +1,9 @@
 package se.home.magnus.preference.utility;
 
-import android.app.Application;
-
 /**
- * This class contains common variables used throughout this app. The reason it extends Application
- * is a workaround to get this class to be loaded at startup.
+ * This class contains common variables used throughout this library.
  */
-public class Constant extends Application {
+public class Constant {
 
     /**
      * A tolerance used when comparing floats to "consider" them equal.

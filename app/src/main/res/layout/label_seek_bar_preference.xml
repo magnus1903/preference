@@ -34,7 +34,7 @@
             and
 
             NOTE the padding "start" and "end" which are necessary since
-            there are "not wanted paddings" by defazlt
+            there are "not wanted paddings" by default
         -->
         <se.home.magnus.preference.seekbar.LabelSeekBar
             android:id="@+id/seekbar"
