@@ -24,4 +24,8 @@
     <!-- parsable edit text strings -->
     <string name="parsable_edit_text_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <string name="parsable_edit_text_matching_error">Strängen \"%1$s\" matchar inte reguljäruttrycket \"%2$s\".</string>
+    <!-- button strings -->
+    <string name="button_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
+    <string name="button_dependency_error">Det \"obligatoriska\" attributet \"click listener\" måste tilldelas.</string>
+    <string name="generic_size_parse_error">Den givna storleken \"%1$s\" matchar inte reguljäruttrycket \"%2$s\".</string>
 </resources>

@@ -28,10 +28,10 @@ import se.home.magnus.preference.R;
 public class ParsableEditTextPreference extends EditTextPreference {
 
     /**
-     * Tells whether or not the fragment manager is set. This is a solution to make the
-     * "fragment manager dependency" mandatory. If the fragment manager isn't set
-     * (when needed) an exception is thrown. The "motivation" for this solution is that it isn't
-     * possible to use "constructor dependency injection".
+     * Tells whether or not the fragment manager is set. This is a solution to make the "fragment
+     * manager dependency" mandatory. If the fragment manager isn't set (when needed) an exception
+     * is thrown. The "motivation" for this solution is that it isn't possible to use "constructor
+     * dependency injection".
      */
     private boolean _isFragmentManagerSet;
 
@@ -46,7 +46,8 @@ public class ParsableEditTextPreference extends EditTextPreference {
     private final String _defaultValue;
 
     /**
-     * A "mandatory" fragment manager which is used to retrieve the alert dialog of this preference.
+     * A "mandatory" fragment manager which is used to retrieve the alert dialog of this
+     * preference.
      */
     private FragmentManager _fragmentManager;
 

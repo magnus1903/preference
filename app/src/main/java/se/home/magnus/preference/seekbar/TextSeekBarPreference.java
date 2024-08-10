@@ -26,7 +26,7 @@ import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
-import se.home.magnus.preference.utility.Constant;
+import se.home.magnus.preference.utility.Common;
 import se.home.magnus.preference.R;
 
 /**
@@ -143,7 +143,7 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
         _labelSeekBar = (LabelSeekBar) preferenceViewHolder.findViewById(R.id.seekbar);
         _labelSeekBar.initialize(_labelArray, this, _thumbColor, _color, _size, _diameter);
         for (int i = 0; i < _valueArray.length; i++) {
-            if (Math.abs(_valueArray[i] - value) < Constant.FLOAT_EQUALITY_TOLERANCE) {
+            if (Math.abs(_valueArray[i] - value) < Common.FLOAT_EQUALITY_TOLERANCE) {
                 index = i;
                 break;
             }
@@ -198,7 +198,7 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
         if (_labelSeekBar != null) {
             index = -1;
             for (int i = 0; i < _valueArray.length; i++) {
-                if (Math.abs(_valueArray[i] - value) < Constant.FLOAT_EQUALITY_TOLERANCE) {
+                if (Math.abs(_valueArray[i] - value) < Common.FLOAT_EQUALITY_TOLERANCE) {
                     index = i;
                     break;
                 }

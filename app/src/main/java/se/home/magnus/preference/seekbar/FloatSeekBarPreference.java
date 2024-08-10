@@ -28,7 +28,7 @@ import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceViewHolder;
 
-import se.home.magnus.preference.utility.Constant;
+import se.home.magnus.preference.utility.Common;
 import se.home.magnus.preference.R;
 
 /**
@@ -140,7 +140,7 @@ public class FloatSeekBarPreference extends Preference {
             valueIncrement = a.getFloat(R.styleable.FloatSeekBar_floatValueIncrement, 0.05f);
             if (valueIncrement > 0) {
                 value = (maximumValue - minimumValue) / valueIncrement;
-                if (Math.abs(value - Math.round(value)) < Constant.FLOAT_EQUALITY_TOLERANCE) {
+                if (Math.abs(value - Math.round(value)) < Common.FLOAT_EQUALITY_TOLERANCE) {
                     _valueIncrement = valueIncrement;
                 } else {
                     throw new IllegalArgumentException(getContext().getString(R.string.float_seek_bar_increment_error));
@@ -152,7 +152,7 @@ public class FloatSeekBarPreference extends Preference {
             if (!(defaultValue < minimumValue) && !(defaultValue > maximumValue)) {
                 value = defaultValue / valueIncrement;
                 // NOTE that the difference between the default and minimum values must be equally divisible by the value increment
-                if (Math.abs(value - Math.round(value)) < Constant.FLOAT_EQUALITY_TOLERANCE) {
+                if (Math.abs(value - Math.round(value)) < Common.FLOAT_EQUALITY_TOLERANCE) {
                     _value = _defaultValue = defaultValue;
                 } else {
                     throw new IllegalArgumentException(getContext().getString(R.string.float_seek_bar_default_error));
