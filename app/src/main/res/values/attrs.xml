@@ -81,8 +81,10 @@
         <attr name="buttonBackgroundColorOn" format="color" />
         <!-- the color of the background rectangle in "off mode" (i.e. its "normal" color) -->
         <attr name="buttonBackgroundColorOff" format="color" />
-        <!-- the color of the text -->
-        <attr name="buttonTextColor" format="color" />
+        <!-- the color of the text "on mode" -->
+        <attr name="buttonTextColorOn" format="color" />
+        <!-- the color of the text "off mode" -->
+        <attr name="buttonTextColorOff" format="color" />
         <!-- the text -->
         <attr name="buttonText" format="string" />
         <!-- the corner radius of the background rectangle expressed in dp -->

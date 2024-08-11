@@ -52,11 +52,6 @@ public class ButtonPreference extends Preference {
     private boolean _isClickListenerSet;
 
     /**
-     * The text color of this button.
-     */
-    private final int _textColor;
-
-    /**
      * The background "on color" of this button (i.e. when it is pressed).
      */
     private final int _backgroundColorOn;
@@ -65,6 +60,16 @@ public class ButtonPreference extends Preference {
      * The background "off color" of this button (i.e. its "normal" color).
      */
     private final int _backgroundColorOff;
+
+    /**
+     * The "on text" color of this button (i.e. when it is pressed).
+     */
+    private final int _textColorOn;
+
+    /**
+     * The "off text" color of this button (i.e. its "normal" color).
+     */
+    private final int _textColorOff;
 
     /**
      * The corner radius of the background rectangle in pixels.
@@ -111,9 +116,10 @@ public class ButtonPreference extends Preference {
                 throw new RuntimeException(getContext().getString(R.string.button_mandatory_error, "buttonText"));
             }
             _isClickListenerSet = false;
-            _textColor = typedArray.getColor(R.styleable.ButtonPreference_buttonTextColor, context.getColor(android.R.color.white));
             _backgroundColorOn = typedArray.getColor(R.styleable.ButtonPreference_buttonBackgroundColorOn, context.getColor(R.color.color_primary));
             _backgroundColorOff = typedArray.getColor(R.styleable.ButtonPreference_buttonBackgroundColorOff, context.getColor(R.color.color_secondary_light));
+            _textColorOn = typedArray.getColor(R.styleable.ButtonPreference_buttonTextColorOn, context.getColor(android.R.color.black));
+            _textColorOff = typedArray.getColor(R.styleable.ButtonPreference_buttonTextColorOff, context.getColor(android.R.color.white));
             _buttonRadius = buttonRadius;
             _text = text;
         } finally {
@@ -147,7 +153,7 @@ public class ButtonPreference extends Preference {
         // "button preference" instance
         preferenceViewHolder.setIsRecyclable(false);
         button = (Button) preferenceViewHolder.findViewById(R.id.button);
-        button.setTextColor(_textColor);
+        button.setTextColor(_textColorOff);
         button.setBackground(getBackground());
         button.setText(_text);
         button.setOnClickListener(new View.OnClickListener() {
@@ -159,6 +165,7 @@ public class ButtonPreference extends Preference {
             @Override
             public void onClick(@NonNull View view) {
                 if (_isClickListenerSet) {
+                    ((Button) view).setTextColor(_textColorOn);
                     _clickListener.onClick(view);
                 } else {
                     throw new RuntimeException(getContext().getString(R.string.button_dependency_error));
@@ -182,18 +189,16 @@ public class ButtonPreference extends Preference {
      *
      * @return a state list drawable
      */
+    @NonNull
     private Drawable getBackground() {
         StateListDrawable stateListDrawable = new StateListDrawable();
         GradientDrawable buttonBackgroundOn = new GradientDrawable(), buttonBackgroundOff = new GradientDrawable();
-
         buttonBackgroundOn.setShape(GradientDrawable.RECTANGLE);
         buttonBackgroundOn.setColor(_backgroundColorOn);
         buttonBackgroundOn.setCornerRadius(_buttonRadius);
-
         buttonBackgroundOff.setShape(GradientDrawable.RECTANGLE);
         buttonBackgroundOff.setColor(_backgroundColorOff);
         buttonBackgroundOff.setCornerRadius(_buttonRadius);
-
         stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, buttonBackgroundOn);
         stateListDrawable.addState(StateSet.WILD_CARD, buttonBackgroundOff);
         return stateListDrawable;
