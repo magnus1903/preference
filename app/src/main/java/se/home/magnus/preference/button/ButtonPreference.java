@@ -185,15 +185,12 @@ public class ButtonPreference extends Preference {
     private Drawable getBackground() {
         StateListDrawable stateListDrawable = new StateListDrawable();
         GradientDrawable buttonBackgroundOn = new GradientDrawable(), buttonBackgroundOff = new GradientDrawable();
-
         buttonBackgroundOn.setShape(GradientDrawable.RECTANGLE);
         buttonBackgroundOn.setColor(_backgroundColorOn);
         buttonBackgroundOn.setCornerRadius(_buttonRadius);
-
         buttonBackgroundOff.setShape(GradientDrawable.RECTANGLE);
         buttonBackgroundOff.setColor(_backgroundColorOff);
         buttonBackgroundOff.setCornerRadius(_buttonRadius);
-
         stateListDrawable.addState(new int[]{android.R.attr.state_pressed}, buttonBackgroundOn);
         stateListDrawable.addState(StateSet.WILD_CARD, buttonBackgroundOff);
         return stateListDrawable;

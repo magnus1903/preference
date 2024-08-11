@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/animator-v21/design_appbar_state_list_animator.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-5:/animator-v21/design_appbar_state_list_animator.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/animator-v21/m3_appbar_state_list_animator.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-5:/animator-v21/m3_appbar_state_list_animator.xml"
+    }
+]
