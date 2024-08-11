@@ -1,5 +1,6 @@
 package se.home.magnus.preference.edittext;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
@@ -155,6 +156,12 @@ public class ParsableEditTextPreference extends EditTextPreference {
         _isFragmentManagerSet = false;
         _regularExpression = regularExpression;
         _defaultValue = defaultValue;
+    }
+
+    @SuppressLint("RestrictedApi")
+    @Override
+    public void performClick() {
+        super.performClick();
     }
 
     /**
