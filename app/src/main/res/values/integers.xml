@@ -11,10 +11,6 @@
     <!-- the default value of the thumb diameter in pixels -->
     <integer name="text_seek_bar_ball_diameter_default_value">40</integer>
     <!-- the default value of the height in pixels of the seek bar -->
-    <integer name="choice_seek_bar_size_default_value">6</integer>
-    <!-- the default value of the thumb diameter in pixels -->
-    <integer name="choice_seek_bar_ball_diameter_default_value">40</integer>
-    <!-- the default value of the height in pixels of the seek bar -->
     <integer name="enumeration_seek_bar_size_default_value">6</integer>
     <!-- the default value of the thumb diameter in pixels -->
     <integer name="enumeration_seek_bar_ball_diameter_default_value">40</integer>

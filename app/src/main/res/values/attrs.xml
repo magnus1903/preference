@@ -51,21 +51,6 @@
         <!-- the labels of the seek bar -->
         <attr name="enumerationLabels" format="reference" />
     </declare-styleable>
-    <declare-styleable name="ChoiceSeekBar">
-        <attr name="choiceDefaultValue" format="string" />
-        <!-- the color of the seek bar -->
-        <attr name="choiceColor" format="color" />
-        <!-- the color of the thumb of the seek bar -->
-        <attr name="choiceThumbColor" format="color" />
-        <!-- the thickness (height) of the seek bar -->
-        <attr name="choiceSize" format="integer" />
-        <!-- the diameter of the thumb of the seek bar -->
-        <attr name="choiceDiameter" format="integer" />
-        <!-- the values of the seek bar -->
-        <attr name="choiceValues" format="reference" />
-        <!-- the labels of the seek bar -->
-        <attr name="choiceLabels" format="reference" />
-    </declare-styleable>
     <declare-styleable name="ParsableEditTextPreference">
         <!-- a regular expression, defining valid characters -->
         <attr name="parsableRegularExpression" format="string" />
