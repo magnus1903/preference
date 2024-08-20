@@ -42,7 +42,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
 
     /**
      * The default value of this preference.
-z     */
+     */
     private final String _defaultValue;
 
     /**
@@ -158,6 +158,31 @@ z     */
     }
 
     /**
+     * Set the color of the dialog buttons in this preference.
+     *
+     * @param color a color value in the form 0xAARRGGBB, do not pass a resource id, to get a color value from a resource id, call getColor
+     *
+     * @throws RuntimeException
+     * @noinspection JavadocDeclaration
+     */
+    public void setDialogButtonColor(int color) throws RuntimeException {
+        AlertDialog dialog;
+        if (_isFragmentManagerSet) {
+            for (Fragment fragment : _fragmentManager.getFragments()) {
+                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
+                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
+                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(color);
+                        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(color);
+                        break;
+                    }
+                }
+            }
+        } else {
+            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
+        }
+    }
+
+    /**
      * Sets the default value of this preference.
      */
     public void setDefaultValue() {
@@ -222,6 +247,7 @@ z     */
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
                         dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setEnabled(enabled);
+                        break;
                     }
                 }
             }
