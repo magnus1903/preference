@@ -205,9 +205,9 @@ public class FloatSeekBarPreference extends Preference {
     }
 
     /**
-     * Sets the default value of this preference.
+     * Sets the default (normal) value of this preference.
      */
-    public void setDefaultValue() {
+    public void setNormalValue() {
         setValue(_defaultValue);
     }
 

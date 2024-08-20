@@ -42,7 +42,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
 
     /**
      * The default value of this preference.
-     */
+z     */
     private final String _defaultValue;
 
     /**
@@ -158,9 +158,9 @@ public class ParsableEditTextPreference extends EditTextPreference {
     }
 
     /**
-     * Sets the default value of this preference.
+     * Sets the default (normal) value of this preference.
      */
-    public void setDefaultValue() {
+    public void setNormalValue() {
         setValue(_defaultValue);
     }
 
