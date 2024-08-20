@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
@@ -39,12 +40,12 @@ public class EnumerationSeekBarPreference extends Preference implements LabelSee
     /**
      * The color of the seek bar of this preference.
      */
-    private final int _color;
+    private int _color;
 
     /**
      * The color of the thumb of the seek bar of this preference.
      */
-    private final int _thumbColor;
+    private int _thumbColor;
 
     /**
      * The diameter (in pixels) of the thumb of the seek bar of this preference.
@@ -164,6 +165,24 @@ public class EnumerationSeekBarPreference extends Preference implements LabelSee
      */
     public void setDefaultValue() {
         setValue(_defaultValue);
+    }
+
+    /**
+     * Sets the color of the seek bar of this preference.
+     *
+     * @param color a color
+     */
+    public void setColor(@ColorInt int color) {
+        _color = color;
+    }
+
+    /**
+     * Sets the color of the thumb of the seek bar of this preference.
+     *
+     * @param color a color
+     */
+    public void setThumbColor(@ColorInt int color) {
+        _thumbColor = color;
     }
 
     /**

@@ -23,6 +23,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
@@ -60,12 +61,12 @@ public class FloatSeekBarPreference extends Preference {
     /**
      * The color of the progress of the float seek bar.
      */
-    private final int _color;
+    private int _color;
 
     /**
      * The color of the thumb of the float seek bar.
      */
-    private final int _thumbColor;
+    private int _thumbColor;
 
     /**
      * The diameter (in pixels) of the thumb of the float seek bar.
@@ -202,6 +203,24 @@ public class FloatSeekBarPreference extends Preference {
             _textView.setText(String.format(_valueFormat, _value));
         }
         _floatSeekBar.setValue((_value - _minimumValue) / (_maximumValue - _minimumValue));
+    }
+
+    /**
+     * Sets the color of the seek bar of this preference.
+     *
+     * @param color a color
+     */
+    public void setColor(@ColorInt int color) {
+        _color = color;
+    }
+
+    /**
+     * Sets the color of the thumb of the seek bar of this preference.
+     *
+     * @param color a color
+     */
+    public void setThumbColor(@ColorInt int color) {
+        _thumbColor = color;
     }
 
     /**
