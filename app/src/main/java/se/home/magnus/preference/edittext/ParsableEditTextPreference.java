@@ -3,7 +3,6 @@ package se.home.magnus.preference.edittext;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -209,9 +208,9 @@ public class ParsableEditTextPreference extends EditTextPreference {
     }
 
     /**
-     * Set the enabled state of the dialog buttons in this preference.
+     * Set the enabled state of the positive dialog button in this preference.
      *
-     * @param enabled true if the dialog buttons are enabled, false otherwise
+     * @param enabled true if the positive dialog button is enabled, false otherwise
      *
      * @throws RuntimeException
      * @noinspection JavadocDeclaration
@@ -223,7 +222,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(enabled ? View.VISIBLE : View.GONE);
-//                        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setVisibility(View.VISIBLE);
                         break;
                     }
                 }
