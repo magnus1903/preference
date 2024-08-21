@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,6 +20,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.preference.EditTextPreference;
 import androidx.preference.EditTextPreferenceDialogFragmentCompat;
+import androidx.preference.Preference;
+import androidx.recyclerview.widget.RecyclerView;
 
 import se.home.magnus.preference.R;
 
@@ -156,6 +159,14 @@ public class ParsableEditTextPreference extends EditTextPreference {
         _isFragmentManagerSet = false;
         _regularExpression = regularExpression;
         _defaultValue = defaultValue;
+
+        setOnPreferenceClickListener(new OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(@NonNull Preference preference) {
+                return false;
+            }
+        });
+
     }
 
     /**
