@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -221,8 +222,8 @@ public class ParsableEditTextPreference extends EditTextPreference {
             for (Fragment fragment : _fragmentManager.getFragments()) {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
-                        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setEnabled(enabled);
+                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(enabled ? View.VISIBLE : View.GONE);
+//                        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setVisibility(View.VISIBLE);
                         break;
                     }
                 }
