@@ -223,8 +223,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
                         dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setEnabled(enabled);
-                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(Color.BLUE);
-                        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(Color.CYAN);
                         break;
                     }
                 }
