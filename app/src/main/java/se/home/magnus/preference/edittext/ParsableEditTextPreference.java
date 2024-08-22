@@ -221,6 +221,21 @@ public class ParsableEditTextPreference extends EditTextPreference {
             for (Fragment fragment : _fragmentManager.getFragments()) {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
+                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
+                        break;
+                    }
+                }
+            }
+        } else {
+            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
+        }
+    }
+    private void OLD_setDialogButtonEnabled(boolean enabled) throws RuntimeException {
+        AlertDialog dialog;
+        if (_isFragmentManagerSet) {
+            for (Fragment fragment : _fragmentManager.getFragments()) {
+                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
+                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(enabled ? View.VISIBLE : View.GONE);
                         break;
                     }
