@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -207,9 +208,9 @@ public class ParsableEditTextPreference extends EditTextPreference {
     }
 
     /**
-     * Set the enabled state of the dialog "positive button" in this preference.
+     * Set the enabled state of the positive dialog button in this preference.
      *
-     * @param enabled true if the dialog "positive button" is enabled, false otherwise
+     * @param enabled true if the positive dialog button is enabled, false otherwise
      *
      * @throws RuntimeException
      * @noinspection JavadocDeclaration
@@ -220,7 +221,8 @@ public class ParsableEditTextPreference extends EditTextPreference {
             for (Fragment fragment : _fragmentManager.getFragments()) {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
+                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(enabled ? View.VISIBLE : View.GONE);
+                        break;
                     }
                 }
             }
