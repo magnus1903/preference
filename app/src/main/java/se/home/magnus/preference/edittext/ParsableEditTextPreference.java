@@ -3,6 +3,7 @@ package se.home.magnus.preference.edittext;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
@@ -235,7 +236,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                         positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
                         positiveButton.setEnabled(enabled);
                         if (!enabled) {
-                            positiveButton.setTextColor(0xFFC107);
+                            positiveButton.setTextColor(Color.CYAN);
                         }
                         break;
                     }
