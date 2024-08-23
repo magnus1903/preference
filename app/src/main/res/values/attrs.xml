@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- the name of the style to use when specifying the "disabled color" of a button -->
+    <attr name="buttonBarDisabledButtonStyle" format="reference" />
     <declare-styleable name="FloatSeekBar">
         <attr name="floatDefaultValue" format="float" />
         <attr name="floatMinimumValue" format="float" />
