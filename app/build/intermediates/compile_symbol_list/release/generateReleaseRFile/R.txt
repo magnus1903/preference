@@ -1,5 +1,6 @@
 int attr buttonBackgroundColorOff 0x0
 int attr buttonBackgroundColorOn 0x0
+int attr buttonBarDisabledButtonStyle 0x0
 int attr buttonRadius 0x0
 int attr buttonText 0x0
 int attr buttonTextColor 0x0

@@ -1,6 +1,7 @@
 se.home.magnus.preference
 attr buttonBackgroundColorOff
 attr buttonBackgroundColorOn
+attr buttonBarDisabledButtonStyle
 attr buttonRadius
 attr buttonText
 attr buttonTextColor

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <attr format="reference" name="buttonBarDisabledButtonStyle"/>
     <color name="color_primary">#40E0D0</color>
     <color name="color_secondary_dark">#000000</color>
     <color name="color_secondary_light">#C0C0C0</color>

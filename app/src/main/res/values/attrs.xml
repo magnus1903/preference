@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- the name of the style to use when specifying the "disabled color" of a button -->
-    <attr name="buttonBarDisabledButtonStyle" format="reference" />
     <declare-styleable name="FloatSeekBar">
         <attr name="floatDefaultValue" format="float" />
         <attr name="floatMinimumValue" format="float" />
@@ -63,6 +61,8 @@
         <!-- a default text value-->
         <attr name="parsableDefaultValue" format="string" />
     </declare-styleable>
+    <!-- the name of the style to use when specifying the "disabled color" of a button -->
+    <attr name="parsableEditTextPreferenceDisabledButtonStyle" format="reference" />
     <declare-styleable name="ButtonPreference">
         <!-- the color of the background rectangle in "on mode" (i.e. when it is pressed) -->
         <attr name="buttonBackgroundColorOn" format="color" />

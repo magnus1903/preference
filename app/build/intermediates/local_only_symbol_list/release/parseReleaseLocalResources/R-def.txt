@@ -2,6 +2,7 @@ R_DEF: Internal format may change without notice
 local
 attr? buttonBackgroundColorOff
 attr? buttonBackgroundColorOn
+attr buttonBarDisabledButtonStyle
 attr? buttonRadius
 attr? buttonText
 attr? buttonTextColor
