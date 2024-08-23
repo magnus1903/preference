@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -36,6 +37,11 @@ public class ParsableEditTextPreference extends EditTextPreference {
      * dependency injection".
      */
     private boolean _isFragmentManagerSet;
+
+    /**
+     * The color of a disabled dialog button.
+     */
+    private int _disabledColor;
 
     /**
      * A regular expression which all "edit text values" must match.
@@ -65,6 +71,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
     @SuppressWarnings("JavaDoc")
     public ParsableEditTextPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws RuntimeException {
         super(context, attributeSet);
+        int disabledColor;
         String description, hint, regularExpression, defaultValue;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
         try {
@@ -83,6 +90,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
             if ((description = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableDescription)) == null) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableDescription"));
             }
+            disabledColor = typedArray.getColor(R.styleable.ParsableEditTextPreference_parsableDisabledButtonColor, context.getColor(R.color.color_secondary_light));
         } finally {
             typedArray.recycle();
         }
@@ -155,6 +163,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
             }
         });
         _isFragmentManagerSet = false;
+        _disabledColor = disabledColor;
         _regularExpression = regularExpression;
         _defaultValue = defaultValue;
     }
@@ -236,6 +245,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
             throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
         }
     }
+
     private void OLD_setDialogButtonEnabled(boolean enabled) throws RuntimeException {
         AlertDialog dialog;
         if (_isFragmentManagerSet) {

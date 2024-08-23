@@ -56,6 +56,8 @@
         <attr format="string" name="parsableDescription"/>
         
         <attr format="string" name="parsableDefaultValue"/>
+        
+        <attr format="color" name="parsableDisabledButtonColor"/>
     </declare-styleable><declare-styleable name="ButtonPreference">
         
         <attr format="color" name="buttonBackgroundColorOn"/>
@@ -67,7 +69,7 @@
         <attr format="string" name="buttonText"/>
         
         <attr format="string" name="buttonRadius"/>
-    </declare-styleable><attr format="reference" name="parsableEditTextPreferenceDisabledButtonStyle"/></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary">#40E0D0</color><color name="color_secondary_light">#C0C0C0</color><color name="color_secondary_dark">#000000</color></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\dimens.xml" qualifiers=""><dimen format="float" name="float_seek_bar_sound_volume_default_value" ns1:keep="@dimen/float_seek_bar_sound_volume_default_value" type="dimen">
+    </declare-styleable></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary">#40E0D0</color><color name="color_secondary_light">#C0C0C0</color><color name="color_secondary_dark">#000000</color></file><file path="D:\Sandbox\AndroidStudioProjects\Preference\app\src\main\res\values\dimens.xml" qualifiers=""><dimen format="float" name="float_seek_bar_sound_volume_default_value" ns1:keep="@dimen/float_seek_bar_sound_volume_default_value" type="dimen">
         1
     </dimen><dimen format="float" name="float_seek_bar_sound_volume_minimum_value" ns1:keep="@dimen/float_seek_bar_sound_volume_minimum_value" type="dimen">
         0
@@ -131,6 +133,8 @@
         <attr format="string" name="parsableDescription"/>
         
         <attr format="string" name="parsableDefaultValue"/>
+        
+        <attr format="color" name="parsableDisabledButtonColor"/>
     </declare-styleable><declare-styleable name="TextSeekBar">
         <attr format="string" name="textDefaultValue"/>
         
