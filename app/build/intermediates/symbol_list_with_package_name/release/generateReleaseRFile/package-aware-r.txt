@@ -1,7 +1,6 @@
 se.home.magnus.preference
 attr buttonBackgroundColorOff
 attr buttonBackgroundColorOn
-attr buttonBarDisabledButtonStyle
 attr buttonRadius
 attr buttonText
 attr buttonTextColor
@@ -24,6 +23,7 @@ attr floatThumbColor
 attr floatValueIncrement
 attr parsableDefaultValue
 attr parsableDescription
+attr parsableEditTextPreferenceDisabledButtonStyle
 attr parsableHint
 attr parsableRegularExpression
 attr textColor

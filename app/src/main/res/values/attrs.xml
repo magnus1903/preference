@@ -60,9 +60,9 @@
         <attr name="parsableDescription" format="string" />
         <!-- a default text value-->
         <attr name="parsableDefaultValue" format="string" />
+        <!-- the color of a dialog button when it is disabled -->
+        <attr name="parsableDisabledButtonColor" format="color" />
     </declare-styleable>
-    <!-- the name of the style to use when specifying the "disabled color" of a button -->
-    <attr name="parsableEditTextPreferenceDisabledButtonStyle" format="reference" />
     <declare-styleable name="ButtonPreference">
         <!-- the color of the background rectangle in "on mode" (i.e. when it is pressed) -->
         <attr name="buttonBackgroundColorOn" format="color" />

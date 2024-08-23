@@ -1,6 +1,5 @@
 int attr buttonBackgroundColorOff 0x0
 int attr buttonBackgroundColorOn 0x0
-int attr buttonBarDisabledButtonStyle 0x0
 int attr buttonRadius 0x0
 int attr buttonText 0x0
 int attr buttonTextColor 0x0
@@ -23,6 +22,7 @@ int attr floatThumbColor 0x0
 int attr floatValueIncrement 0x0
 int attr parsableDefaultValue 0x0
 int attr parsableDescription 0x0
+int attr parsableEditTextPreferenceDisabledButtonStyle 0x0
 int attr parsableHint 0x0
 int attr parsableRegularExpression 0x0
 int attr textColor 0x0
