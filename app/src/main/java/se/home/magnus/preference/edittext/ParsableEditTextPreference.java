@@ -3,17 +3,13 @@ package se.home.magnus.preference.edittext;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -38,11 +34,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
      * dependency injection".
      */
     private boolean _isFragmentManagerSet;
-
-    /**
-     * The color of a disabled dialog button.
-     */
-    private int _disabledColor;
 
     /**
      * A regular expression which all "edit text values" must match.
@@ -72,7 +63,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
     @SuppressWarnings("JavaDoc")
     public ParsableEditTextPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws RuntimeException {
         super(context, attributeSet);
-        int disabledColor;
         String description, hint, regularExpression, defaultValue;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
         try {
@@ -91,7 +81,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
             if ((description = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableDescription)) == null) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableDescription"));
             }
-            disabledColor = typedArray.getColor(R.styleable.ParsableEditTextPreference_parsableDisabledButtonColor, context.getColor(R.color.color_secondary_light));
         } finally {
             typedArray.recycle();
         }
@@ -164,7 +153,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
             }
         });
         _isFragmentManagerSet = false;
-        _disabledColor = disabledColor;
         _regularExpression = regularExpression;
         _defaultValue = defaultValue;
     }
@@ -228,32 +216,11 @@ public class ParsableEditTextPreference extends EditTextPreference {
      */
     private void setDialogButtonEnabled(boolean enabled) throws RuntimeException {
         AlertDialog dialog;
-        Button positiveButton;
         if (_isFragmentManagerSet) {
             for (Fragment fragment : _fragmentManager.getFragments()) {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        positiveButton = dialog.getButton(DialogInterface.BUTTON_POSITIVE);
-                        positiveButton.setEnabled(enabled);
-                        if (!enabled) {
-                            positiveButton.setTextColor(Color.CYAN);
-                        }
-                        break;
-                    }
-                }
-            }
-        } else {
-            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
-        }
-    }
-
-    private void OLD_setDialogButtonEnabled(boolean enabled) throws RuntimeException {
-        AlertDialog dialog;
-        if (_isFragmentManagerSet) {
-            for (Fragment fragment : _fragmentManager.getFragments()) {
-                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
-                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setVisibility(enabled ? View.VISIBLE : View.GONE);
+                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
                         break;
                     }
                 }
