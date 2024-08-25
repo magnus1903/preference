@@ -27,6 +27,7 @@ import android.util.StateSet;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
@@ -54,17 +55,17 @@ public class ButtonPreference extends Preference {
     /**
      * The text color of this button.
      */
-    private final int _textColor;
+    private int _textColor;
 
     /**
      * The background "on color" of this button (i.e. when it is pressed).
      */
-    private final int _backgroundColorOn;
+    private int _backgroundColorOn;
 
     /**
      * The background "off color" of this button (i.e. its "normal" color).
      */
-    private final int _backgroundColorOff;
+    private int _backgroundColorOff;
 
     /**
      * The corner radius of the background rectangle in pixels.
@@ -175,6 +176,33 @@ public class ButtonPreference extends Preference {
     public void setClickListener(@NonNull View.OnClickListener clickListener) {
         _isClickListenerSet = true;
         _clickListener = clickListener;
+    }
+
+    /**
+     * Sets the text color of this button.
+     *
+     * @param color a color
+     */
+    public void setTextColor(@ColorInt int color) {
+        _textColor = color;
+    }
+
+    /**
+     * Sets the background "on color" of this button (i.e. when it is pressed).
+     *
+     * @param color a color
+     */
+    public void setBackgroundColorOn(@ColorInt int color) {
+        _backgroundColorOn = color;
+    }
+
+    /**
+     * Sets the background "off color" of this button (i.e. its "normal" color).
+     *
+     * @param color a color
+     */
+    public void setBackgroundColorOff(@ColorInt int color) {
+        _backgroundColorOff = color;
     }
 
     /**

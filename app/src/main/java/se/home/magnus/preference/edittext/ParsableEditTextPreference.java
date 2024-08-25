@@ -23,10 +23,19 @@ import se.home.magnus.preference.R;
 
 /**
  * This class is extending the "edit text preference" class making it possible to parse the text
- * "against" a regular expression.
+ * "against" a regular expression. NOTE that the enabled/disabled colors of the dialog buttons are
+ * specified in the AlertDialogTheme in the styles.xml (in the "using" app).
  */
 public class ParsableEditTextPreference extends EditTextPreference {
 
+    /**
+     * A regular expression which all "edit text values" must match.
+     */
+    private final String _regularExpression;
+    /**
+     * The default value of this preference.
+     */
+    private final String _defaultValue;
     /**
      * Tells whether or not the fragment manager is set. This is a solution to make the "fragment
      * manager dependency" mandatory. If the fragment manager isn't set (when needed) an exception
@@ -34,17 +43,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
      * dependency injection".
      */
     private boolean _isFragmentManagerSet;
-
-    /**
-     * A regular expression which all "edit text values" must match.
-     */
-    private final String _regularExpression;
-
-    /**
-     * The default value of this preference.
-     */
-    private final String _defaultValue;
-
     /**
      * A "mandatory" fragment manager which is used to retrieve the alert dialog of this
      * preference.
