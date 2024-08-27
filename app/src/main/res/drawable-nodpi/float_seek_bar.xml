@@ -40,7 +40,7 @@
                         android:tint="#008577">
                         <corners android:radius="10dp" />
                         <size android:height="10dp" />
-                        <solid android:color="#FFFFFF" />
+                        <solid android:color="@android:color/white" />
                     </shape>
                 </item>
             </selector>
