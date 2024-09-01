@@ -58,8 +58,6 @@
         <attr name="parsableHint" format="string" />
         <!-- a description of a text -->
         <attr name="parsableDescription" format="string" />
-        <!-- a default text value-->
-        <attr name="parsableDefaultValue" format="string" />
     </declare-styleable>
     <declare-styleable name="ButtonPreference">
         <!-- the color of the background rectangle in "on mode" (i.e. when it is pressed) -->

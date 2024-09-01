@@ -142,8 +142,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
         });
         _isFragmentManagerSet = false;
         _regularExpression = regularExpression;
-        getPreferenceManager().showDialog(this);
-
     }
 
     /**
