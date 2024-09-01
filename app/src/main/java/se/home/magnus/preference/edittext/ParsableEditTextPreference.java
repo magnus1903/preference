@@ -86,6 +86,11 @@ public class ParsableEditTextPreference extends EditTextPreference {
             public void onBindEditText(@NonNull EditText editText) {
                 TextView dialogTitle = ((LinearLayout) editText.getParent()).findViewById(R.id.edit_title);
                 dialogTitle.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
+
+                if (editText.getText().length() == 0) {
+                    setDialogButtonEnabled(false);
+                }
+
                 editText.setHint(hint);
                 editText.addTextChangedListener(new TextWatcher() {
                     /**
