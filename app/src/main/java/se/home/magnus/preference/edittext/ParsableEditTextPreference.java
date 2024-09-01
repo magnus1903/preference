@@ -100,7 +100,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
         }
         // this "setter method" is necessary to "remove" the "preference title" from the "preference dialog"
         setDialogTitle("");
-        setText(getPersistedString(defaultValue));
+//        setText(getPersistedString(defaultValue));
         setOnBindEditTextListener(new EditTextPreference.OnBindEditTextListener() {
             /**
              * Called when the dialog view for this preference has been bound, allowing you to customize the
