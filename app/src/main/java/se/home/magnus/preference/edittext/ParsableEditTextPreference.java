@@ -58,7 +58,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
     @SuppressWarnings("JavaDoc")
     public ParsableEditTextPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws RuntimeException {
         super(context, attributeSet);
-        String description, hint, regularExpression, defaultValue;
+        String description, hint, regularExpression;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
         try {
             if ((regularExpression = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableRegularExpression)) == null) {
@@ -149,18 +149,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
      */
     @Override
     protected void onClick() {
-        AlertDialog dialog;
-        if (_isFragmentManagerSet) {
-            for (Fragment fragment : _fragmentManager.getFragments()) {
-                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
-                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        break;
-                    }
-                }
-            }
-        } else {
-            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
-        }
         super.onClick();
     }
 
