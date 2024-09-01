@@ -6,7 +6,6 @@ import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -59,7 +58,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
     @SuppressWarnings("JavaDoc")
     public ParsableEditTextPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws RuntimeException {
         super(context, attributeSet);
-        String description, hint, regularExpression, defaultValue;
+        String description, hint, regularExpression;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
         try {
             if ((regularExpression = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableRegularExpression)) == null) {
@@ -87,14 +86,12 @@ public class ParsableEditTextPreference extends EditTextPreference {
             public void onBindEditText(@NonNull EditText editText) {
                 TextView dialogTitle = ((LinearLayout) editText.getParent()).findViewById(R.id.edit_title);
                 dialogTitle.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
-                editText.setHint(hint);
-                editText.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        setDialogButtonEnabled(false);
-                    }
-                });
 
+                if (editText.getText().length() == 0) {
+                    setDialogButtonEnabled(false);
+                }
+
+                editText.setHint(hint);
                 editText.addTextChangedListener(new TextWatcher() {
                     /**
                      * This method is called to notify you that, within source, the count characters beginning at start
@@ -160,15 +157,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
     public void setFragmentManager(@NonNull FragmentManager fragmentManager) {
         _isFragmentManagerSet = true;
         _fragmentManager = fragmentManager;
-    }
-
-    /**
-     * Processes a click on this preference.
-     */
-    @Override
-    protected void onClick() {
-        super.onClick();
-        setDialogButtonEnabled(false);
     }
 
     /**
