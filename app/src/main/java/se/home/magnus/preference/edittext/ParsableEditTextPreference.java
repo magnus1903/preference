@@ -58,7 +58,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
     @SuppressWarnings("JavaDoc")
     public ParsableEditTextPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws RuntimeException {
         super(context, attributeSet);
-        String description, hint, regularExpression;
+        String description, hint, regularExpression, defaultValue;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
         try {
             if ((regularExpression = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableRegularExpression)) == null) {
@@ -86,11 +86,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
             public void onBindEditText(@NonNull EditText editText) {
                 TextView dialogTitle = ((LinearLayout) editText.getParent()).findViewById(R.id.edit_title);
                 dialogTitle.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
-
-                if (editText.getText().length() == 0) {
-                    setDialogButtonEnabled(false);
-                }
-
                 editText.setHint(hint);
                 editText.addTextChangedListener(new TextWatcher() {
                     /**
@@ -147,15 +142,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
         });
         _isFragmentManagerSet = false;
         _regularExpression = regularExpression;
-    }
-
-    /**
-     * Processes a click on this preference.
-     */
-    @Override
-    protected void onClick() {
-        super.onClick();
-        setDialogButtonEnabled(false);
     }
 
     /**
