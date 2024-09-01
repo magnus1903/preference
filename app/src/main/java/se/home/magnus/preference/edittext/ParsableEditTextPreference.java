@@ -149,6 +149,18 @@ public class ParsableEditTextPreference extends EditTextPreference {
      */
     @Override
     protected void onClick() {
+        AlertDialog dialog;
+        if (_isFragmentManagerSet) {
+            for (Fragment fragment : _fragmentManager.getFragments()) {
+                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
+                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
+                        break;
+                    }
+                }
+            }
+        } else {
+            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
+        }
         super.onClick();
     }
 
