@@ -64,6 +64,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
         String description, hint, regularExpression, defaultValue;
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
         try {
+/*
             if ((regularExpression = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableRegularExpression)) == null) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableRegularExpression"));
             }
@@ -72,6 +73,21 @@ public class ParsableEditTextPreference extends EditTextPreference {
             }
             if (!defaultValue.matches(regularExpression)) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_matching_error, defaultValue, regularExpression));
+            }
+            if ((hint = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableHint)) == null) {
+                throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableHint"));
+            }
+            if ((description = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableDescription)) == null) {
+                throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableDescription"));
+            }
+*/
+            if ((regularExpression = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableRegularExpression)) == null) {
+                throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableRegularExpression"));
+            }
+            if ((defaultValue = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableDefaultValue)) != null) {
+                if (!defaultValue.matches(regularExpression)) {
+                    throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_matching_error, defaultValue, regularExpression));
+                }
             }
             if ((hint = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableHint)) == null) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableHint"));
@@ -153,6 +169,9 @@ public class ParsableEditTextPreference extends EditTextPreference {
         _isFragmentManagerSet = false;
         _regularExpression = regularExpression;
         _defaultValue = defaultValue;
+
+        getPreferenceManager().showDialog(this);
+
     }
 
     /**
