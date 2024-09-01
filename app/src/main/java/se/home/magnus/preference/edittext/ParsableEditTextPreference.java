@@ -154,8 +154,8 @@ public class ParsableEditTextPreference extends EditTextPreference {
      */
     @Override
     protected void onClick() {
-        setDialogButtonEnabled(false);
         super.onClick();
+        setDialogButtonEnabled(false);
     }
 
     /**
