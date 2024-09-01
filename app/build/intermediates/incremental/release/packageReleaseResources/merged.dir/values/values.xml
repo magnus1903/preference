@@ -101,8 +101,6 @@
         <attr format="string" name="parsableHint"/>
         
         <attr format="string" name="parsableDescription"/>
-        
-        <attr format="string" name="parsableDefaultValue"/>
     </declare-styleable>
     <declare-styleable name="TextSeekBar">
         <attr format="string" name="textDefaultValue"/>

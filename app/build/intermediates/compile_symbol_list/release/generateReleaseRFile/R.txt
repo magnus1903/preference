@@ -20,7 +20,6 @@ int attr floatShowSeekBarValue 0x0
 int attr floatSize 0x0
 int attr floatThumbColor 0x0
 int attr floatValueIncrement 0x0
-int attr parsableDefaultValue 0x0
 int attr parsableDescription 0x0
 int attr parsableHint 0x0
 int attr parsableRegularExpression 0x0
@@ -104,11 +103,10 @@ int styleable FloatSeekBar_floatShowSeekBarValue 6
 int styleable FloatSeekBar_floatSize 7
 int styleable FloatSeekBar_floatThumbColor 8
 int styleable FloatSeekBar_floatValueIncrement 9
-int[] styleable ParsableEditTextPreference { 0x0, 0x0, 0x0, 0x0 }
-int styleable ParsableEditTextPreference_parsableDefaultValue 0
-int styleable ParsableEditTextPreference_parsableDescription 1
-int styleable ParsableEditTextPreference_parsableHint 2
-int styleable ParsableEditTextPreference_parsableRegularExpression 3
+int[] styleable ParsableEditTextPreference { 0x0, 0x0, 0x0 }
+int styleable ParsableEditTextPreference_parsableDescription 0
+int styleable ParsableEditTextPreference_parsableHint 1
+int styleable ParsableEditTextPreference_parsableRegularExpression 2
 int[] styleable TextSeekBar { 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
 int styleable TextSeekBar_textColor 0
 int styleable TextSeekBar_textDefaultValue 1

@@ -22,7 +22,6 @@ attr? floatShowSeekBarValue
 attr? floatSize
 attr? floatThumbColor
 attr? floatValueIncrement
-attr? parsableDefaultValue
 attr? parsableDescription
 attr? parsableHint
 attr? parsableRegularExpression
@@ -84,5 +83,5 @@ string text_seek_bar_value_array_error
 styleable ButtonPreference buttonBackgroundColorOn buttonBackgroundColorOff buttonTextColor buttonText buttonRadius
 styleable EnumerationSeekBar enumerationDefaultValue enumerationColor enumerationThumbColor enumerationSize enumerationDiameter enumerationValues enumerationLabels
 styleable FloatSeekBar floatDefaultValue floatMinimumValue floatMaximumValue floatValueIncrement floatShowSeekBarValue floatColor floatThumbColor floatSize floatDiameter floatDecimalCount
-styleable ParsableEditTextPreference parsableRegularExpression parsableHint parsableDescription parsableDefaultValue
+styleable ParsableEditTextPreference parsableRegularExpression parsableHint parsableDescription
 styleable TextSeekBar textDefaultValue textColor textThumbColor textSize textDiameter textLabels textValues
