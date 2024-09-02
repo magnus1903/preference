@@ -89,8 +89,13 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 dialogTitle.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
                 editText.setHint(hint);
                 editText.setOnClickListener(new View.OnClickListener() {
+                    /**
+                     * Called when a view has been clicked.
+                     *
+                     * @param view the view that was clicked
+                     */
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(View view) {
                         setDialogButtonEnabled(false);
                     }
                 });
@@ -145,31 +150,11 @@ public class ParsableEditTextPreference extends EditTextPreference {
                         setDialogButtonEnabled(source.length() > 0);
                     }
                 });
+                editText.performClick();
             }
         });
         _isFragmentManagerSet = false;
         _regularExpression = regularExpression;
-    }
-
-    /**
-     * Processes a click on this preference.
-     */
-    @Override
-    protected void onClick() {
-        AlertDialog dialog;
-        super.onClick();
-        if (_isFragmentManagerSet) {
-            for (Fragment fragment : _fragmentManager.getFragments()) {
-                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
-                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(false);
-                        break;
-                    }
-                }
-            }
-        } else {
-            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
-        }
     }
 
     /**
