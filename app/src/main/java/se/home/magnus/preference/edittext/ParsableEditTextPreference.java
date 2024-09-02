@@ -160,8 +160,9 @@ public class ParsableEditTextPreference extends EditTextPreference {
                      */
                     @Override
                     public void afterTextChanged(Editable source) {
+                        Editable editable = editText.getText();
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
-//                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editText.getText().length() > 0);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editText.getText().length() > 0);
                     }
                 });
             }
