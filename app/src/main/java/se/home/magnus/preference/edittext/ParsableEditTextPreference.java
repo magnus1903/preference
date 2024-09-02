@@ -150,7 +150,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
                         setDialogButtonEnabled(source.length() > 0);
                     }
                 });
-                editText.performClick();
             }
         });
         _isFragmentManagerSet = false;
