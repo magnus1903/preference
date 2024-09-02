@@ -123,6 +123,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void beforeTextChanged(CharSequence source, int start, int count, int after) {
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, source.length() > 0);
                     }
 
                     /**
