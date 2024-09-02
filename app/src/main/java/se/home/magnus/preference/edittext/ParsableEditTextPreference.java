@@ -167,6 +167,15 @@ public class ParsableEditTextPreference extends EditTextPreference {
     }
 
     /**
+     * Processes a click on this preference.
+     */
+    @Override
+    protected void onClick() {
+        super.onClick();
+        setDialogButtonEnabled(false);
+    }
+
+    /**
      * Sets the value which must match the regular expression.
      *
      * @param value a value
