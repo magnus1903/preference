@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -87,6 +88,29 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 TextView dialogTitle = ((LinearLayout) editText.getParent()).findViewById(R.id.edit_title);
                 dialogTitle.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
                 editText.setHint(hint);
+
+                editText.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+                    @Override
+                    public void onViewAttachedToWindow(@NonNull View v) {
+                        AlertDialog dialog;
+                        if (_isFragmentManagerSet) {
+                            for (Fragment fragment : _fragmentManager.getFragments()) {
+                                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
+                                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
+                                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(false);
+                                        break;
+                                    }
+                                }
+                            }
+                        } else {
+                            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
+                        }
+                    }
+
+                    @Override
+                    public void onViewDetachedFromWindow(@NonNull View v) {}
+                });
+
                 editText.addTextChangedListener(new TextWatcher() {
                     /**
                      * This method is called to notify you that, within source, the count characters beginning at start
