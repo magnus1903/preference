@@ -99,6 +99,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                         boolean enabled = editText.getText().length() > 0;
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, enabled);
                         setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
+                        setDialogCancelable(false);
                     }
 
                     /**
@@ -210,7 +211,31 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(id).setEnabled(enabled);
-                        dialog.setCancelable(false);
+//                        dialog.setCancelable(false);
+                        break;
+                    }
+                }
+            }
+        } else {
+            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
+        }
+    }
+
+    /**
+     * Set the cancelable state of the dialog in this preference.
+     *
+     * @param cancelable true if the dialog is cancelable, false otherwise
+     *
+     * @throws RuntimeException
+     * @noinspection JavadocDeclaration
+     */
+    private void setDialogCancelable(boolean cancelable) throws RuntimeException {
+        AlertDialog dialog;
+        if (_isFragmentManagerSet) {
+            for (Fragment fragment : _fragmentManager.getFragments()) {
+                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
+                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
+                        dialog.setCancelable(cancelable);
                         break;
                     }
                 }
