@@ -210,6 +210,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(id).setEnabled(enabled);
+                        dialog.setCancelable(false);
                         break;
                     }
                 }
