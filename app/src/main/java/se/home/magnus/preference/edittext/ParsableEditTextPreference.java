@@ -161,6 +161,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void afterTextChanged(Editable source) {
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editText.getText().length() > 0);
                     }
                 });
             }
@@ -211,7 +212,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
                         dialog.getButton(id).setEnabled(enabled);
-//                        dialog.setCancelable(false);
                         break;
                     }
                 }
