@@ -88,29 +88,28 @@ public class ParsableEditTextPreference extends EditTextPreference {
                 TextView dialogTitle = ((LinearLayout) editText.getParent()).findViewById(R.id.edit_title);
                 dialogTitle.setText(HtmlCompat.fromHtml(description, HtmlCompat.FROM_HTML_MODE_COMPACT));
                 editText.setHint(hint);
-
                 editText.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+                    /**
+                     * Called when the view is attached to a window.
+                     *
+                     * @param view the view that was attached which value cannot be null.
+                     */
                     @Override
-                    public void onViewAttachedToWindow(@NonNull View v) {
-                        AlertDialog dialog;
-                        if (_isFragmentManagerSet) {
-                            for (Fragment fragment : _fragmentManager.getFragments()) {
-                                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
-                                    if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(false);
-                                        break;
-                                    }
-                                }
-                            }
-                        } else {
-                            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
-                        }
+                    public void onViewAttachedToWindow(@NonNull View view) {
+                        boolean enabled = editText.getText().length() > 0;
+                        setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, enabled);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
                     }
 
+                    /**
+                     * Called when the view is detached from a window.
+                     *
+                     * @param view the view that was detached which value cannot be null.
+                     */
                     @Override
-                    public void onViewDetachedFromWindow(@NonNull View v) {}
+                    public void onViewDetachedFromWindow(@NonNull View view) {
+                    }
                 });
-
                 editText.addTextChangedListener(new TextWatcher() {
                     /**
                      * This method is called to notify you that, within source, the count characters beginning at start
@@ -123,7 +122,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                      */
                     @Override
                     public void beforeTextChanged(CharSequence source, int start, int count, int after) {
-                        setDialogButtonEnabled(source.length() > 0);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
                     }
 
                     /**
@@ -159,7 +158,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                      */
                     @Override
                     public void afterTextChanged(Editable source) {
-                        setDialogButtonEnabled(source.length() > 0);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
                     }
                 });
             }
@@ -195,20 +194,21 @@ public class ParsableEditTextPreference extends EditTextPreference {
     }
 
     /**
-     * Set the enabled state of the positive dialog button in this preference.
+     * Set the enabled state of the specified dialog button in this preference.
      *
-     * @param enabled true if the positive dialog button is enabled, false otherwise
+     * @param id      a dialog button identifier
+     * @param enabled true if the dialog button is enabled, false otherwise
      *
      * @throws RuntimeException
      * @noinspection JavadocDeclaration
      */
-    private void setDialogButtonEnabled(boolean enabled) throws RuntimeException {
+    private void setDialogButtonEnabled(int id, boolean enabled) throws RuntimeException {
         AlertDialog dialog;
         if (_isFragmentManagerSet) {
             for (Fragment fragment : _fragmentManager.getFragments()) {
                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
                     if ((dialog = (AlertDialog) ((EditTextPreferenceDialogFragmentCompat) fragment).getDialog()) != null) {
-                        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setEnabled(enabled);
+                        dialog.getButton(id).setEnabled(enabled);
                         break;
                     }
                 }
