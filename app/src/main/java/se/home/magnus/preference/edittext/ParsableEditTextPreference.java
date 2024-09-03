@@ -99,7 +99,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void onViewAttachedToWindow(@NonNull View view) {
                         boolean enabled = editText.getText().length() > 0;
-                        Editable text = editText.getText();
+                        int textLength = editText.getText().length();
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, enabled);
 //todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
                         setDialogCancelable(false);
