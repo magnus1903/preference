@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="16dp"
         android:paddingStart="48dp"
+        android:paddingTop="40dp"
         android:paddingEnd="48dp"
+        android:paddingBottom="16dp"
         android:text="null"
         android:textAllCaps="false"
         tools:ignore="HardcodedText" />
