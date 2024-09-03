@@ -15,10 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.text.HtmlCompat;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.preference.DialogPreference;
 import androidx.preference.EditTextPreference;
 import androidx.preference.EditTextPreferenceDialogFragmentCompat;
 
@@ -32,17 +30,18 @@ import se.home.magnus.preference.R;
 public class ParsableEditTextPreference extends EditTextPreference {
 
     /**
-     * A regular expression which all "edit text values" must match.
-     */
-    private final String _regularExpression;
-
-    /**
      * Tells whether or not the fragment manager is set. This is a solution to make the "fragment
      * manager dependency" mandatory. If the fragment manager isn't set (when needed) an exception
      * is thrown. The "motivation" for this solution is that it isn't possible to use "constructor
      * dependency injection".
      */
     private boolean _isFragmentManagerSet;
+
+    /**
+     * A regular expression which all "edit text values" must match.
+     */
+    private final String _regularExpression;
+
     /**
      * A "mandatory" fragment manager which is used to retrieve the alert dialog of this
      * preference.
@@ -99,9 +98,10 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void onViewAttachedToWindow(@NonNull View view) {
                         boolean enabled = editText.getText().length() > 0;
-                        int textLength = editText.getText().length();
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, enabled);
-//todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
+                        // the "negative button" ("cancel") is only enabled if the current text isn't empty otherwise
+                        // it is possible to close the dialog without entering any text
+                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
                         setDialogCancelable(false);
                     }
 
@@ -127,7 +127,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void beforeTextChanged(CharSequence source, int start, int count, int after) {
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
-//todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, source.length() > 0);
                     }
 
                     /**
@@ -163,24 +162,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                      */
                     @Override
                     public void afterTextChanged(Editable source) {
-                        boolean editable = source.length() > 0;
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
-
-//todo                        försök hitta "ursprungsvärdet" i edittexten som skall återställas vid "cancel"
-
-                        if (_isFragmentManagerSet) {
-                            for (Fragment fragment : _fragmentManager.getFragments()) {
-                                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
-                                    EditTextPreferenceDialogFragmentCompat xxx = ((EditTextPreferenceDialogFragmentCompat) fragment);
-                                    DialogPreference preference = xxx.getPreference();
-                                    break;
-                                }
-                            }
-                        } else {
-                            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
-                        }
-
-//todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editable);
                     }
                 });
             }
@@ -246,7 +228,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
      * @param cancelable true if the dialog is cancelable, false otherwise
      *
      * @throws RuntimeException
-     * @noinspection JavadocDeclaration
+     * @noinspection JavadocDeclaration, SameParameterValue
      */
     private void setDialogCancelable(boolean cancelable) throws RuntimeException {
         AlertDialog dialog;
