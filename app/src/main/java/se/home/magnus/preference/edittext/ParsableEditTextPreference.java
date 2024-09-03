@@ -161,7 +161,21 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void afterTextChanged(Editable source) {
                         boolean editable = source.length() > 0;
-                        setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, editable);
+                        setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
+
+//todo                        försök hitta "ursprungsvärdet" i edittexten som skall återställas vid "cancel"
+
+                        if (_isFragmentManagerSet) {
+                            for (Fragment fragment : _fragmentManager.getFragments()) {
+                                if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
+                                    EditTextPreferenceDialogFragmentCompat XXX = ((EditTextPreferenceDialogFragmentCompat) fragment);
+                                    break;
+                                }
+                            }
+                        } else {
+                            throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
+                        }
+
                         setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editable);
                     }
                 });
