@@ -15,8 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.text.HtmlCompat;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.preference.DialogPreference;
 import androidx.preference.EditTextPreference;
 import androidx.preference.EditTextPreferenceDialogFragmentCompat;
 
@@ -98,7 +100,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     public void onViewAttachedToWindow(@NonNull View view) {
                         boolean enabled = editText.getText().length() > 0;
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, enabled);
-                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
+//todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, enabled);
                         setDialogCancelable(false);
                     }
 
@@ -124,7 +126,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                     @Override
                     public void beforeTextChanged(CharSequence source, int start, int count, int after) {
                         setDialogButtonEnabled(DialogInterface.BUTTON_POSITIVE, source.length() > 0);
-                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, source.length() > 0);
+//todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, source.length() > 0);
                     }
 
                     /**
@@ -168,7 +170,8 @@ public class ParsableEditTextPreference extends EditTextPreference {
                         if (_isFragmentManagerSet) {
                             for (Fragment fragment : _fragmentManager.getFragments()) {
                                 if (fragment instanceof EditTextPreferenceDialogFragmentCompat) {
-                                    EditTextPreferenceDialogFragmentCompat XXX = ((EditTextPreferenceDialogFragmentCompat) fragment);
+                                    EditTextPreferenceDialogFragmentCompat xxx = ((EditTextPreferenceDialogFragmentCompat) fragment);
+                                    DialogPreference preference = xxx.getPreference();
                                     break;
                                 }
                             }
@@ -176,7 +179,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
                             throw new RuntimeException(getContext().getString(R.string.generic_edit_text_dependency_error));
                         }
 
-                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editable);
+//todo                        setDialogButtonEnabled(DialogInterface.BUTTON_NEGATIVE, editable);
                     }
                 });
             }
