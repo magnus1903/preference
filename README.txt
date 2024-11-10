@@ -14,3 +14,5 @@ Medan "launcher-ikoner" kan hämtas här: https://romannurik.github.io/AndroidAs
 Wi-Fi Direct
 
 OBS att bygga "release-app" fungerar bara för APK
+
+kika i "new-git.txt" hur en ny releas laddas upp till github
