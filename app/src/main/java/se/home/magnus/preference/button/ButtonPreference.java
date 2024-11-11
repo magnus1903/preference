@@ -120,9 +120,6 @@ public class ButtonPreference extends Preference {
         } finally {
             typedArray.recycle();
         }
-
-        this.onClick();
-
     }
 
     /**

@@ -11,8 +11,7 @@ Alla ikoner har hämtats här: https://icons8.com/icons/windows komprimerats hä
 
 Medan "launcher-ikoner" kan hämtas här: https://romannurik.github.io/AndroidAssetStudio/index.html (med färgen #0000FF)
 
-Wi-Fi Direct
 
-OBS att bygga "release-app" fungerar bara för APK
+OBS FÖRSÖK INTE ATT BYGGA EN APK I Android Studio
 
-kika i "new-git.txt" hur en ny releas laddas upp till github
+kika istället i "new-git.txt" hur en ny releas laddas upp till github
