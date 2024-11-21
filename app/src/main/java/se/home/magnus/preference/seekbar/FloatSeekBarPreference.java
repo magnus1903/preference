@@ -98,12 +98,12 @@ public class FloatSeekBarPreference extends Preference {
     /**
      * Listener reacting to the {@link FloatSeekBar} changing value by the user
      */
-    private final FloatSeekBar.OnSeekBarChangeListener mSeekBarChangeListener = new FloatSeekBar.OnSeekBarChangeListener() {
+    private final FloatSeekBar.OnSeekBarChangeListener __mSeekBarChangeListener = new FloatSeekBar.OnSeekBarChangeListener() {
         @Override
         public void onProgressChanged(float floatValue, boolean fromUser) throws IllegalArgumentException {
             float seekBarValue = _minimumValue + (_maximumValue - _minimumValue) * floatValue;
             if (_trackingTouch) {
-                setValueInternal(seekBarValue);
+                __setValueInternal(seekBarValue);
             } else {
                 // We always want to update the text while the FloatSeekBar is being dragged
                 updateLabelValue(seekBarValue);
@@ -127,8 +127,7 @@ public class FloatSeekBarPreference extends Preference {
     public FloatSeekBarPreference(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs, 0);
         float value, minimumValue, maximumValue, defaultValue, valueIncrement;
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FloatSeekBar, 0, 0);
-        try {
+        try (TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FloatSeekBar, 0, 0)) {
             minimumValue = a.getFloat(R.styleable.FloatSeekBar_floatMinimumValue, 0);
             maximumValue = a.getFloat(R.styleable.FloatSeekBar_floatMaximumValue, 1);
             if (maximumValue - minimumValue > 0) {
@@ -167,8 +166,6 @@ public class FloatSeekBarPreference extends Preference {
             _thumbColor = a.getColor(R.styleable.FloatSeekBar_floatThumbColor, context.getColor(R.color.color_primary));
             _diameter = a.getInt(R.styleable.FloatSeekBar_floatDiameter, context.getResources().getInteger(R.integer.float_seek_bar_ball_diameter_default_value));
             _size = a.getInt(R.styleable.FloatSeekBar_floatSize, context.getResources().getInteger(R.integer.float_seek_bar_size_default_value));
-        } finally {
-            a.recycle();
         }
     }
 
@@ -198,7 +195,7 @@ public class FloatSeekBarPreference extends Preference {
             _textView.setVisibility(View.GONE);
             _textView = null;
         }
-        _floatSeekBar.initialize(mSeekBarChangeListener, _valueIncrement / (_maximumValue - _minimumValue), _thumbColor, _color, _size, _diameter);
+        _floatSeekBar.initialize(__mSeekBarChangeListener, _valueIncrement / (_maximumValue - _minimumValue), _thumbColor, _color, _size, _diameter);
         if (_textView != null) {
             _textView.setText(String.format(_valueFormat, _value));
         }
@@ -227,7 +224,7 @@ public class FloatSeekBarPreference extends Preference {
      * Sets the default value of this preference.
      */
     public void setDefaultValue() {
-        setValue(_defaultValue);
+        __setValue(_defaultValue);
     }
 
     @Override
@@ -235,10 +232,10 @@ public class FloatSeekBarPreference extends Preference {
         if (defaultValue == null) {
             defaultValue = _defaultValue;
         }
-        setValue(getPersistedFloat(Float.parseFloat(defaultValue.toString())));
+        __setValue(getPersistedFloat(Float.parseFloat(defaultValue.toString())));
     }
 
-    private void setValueInternal(float value) {
+    private void __setValueInternal(float value) {
         if (value < _minimumValue) {
             value = _minimumValue;
         }
@@ -255,8 +252,8 @@ public class FloatSeekBarPreference extends Preference {
      *
      * @param seekBarValue The current value of the {@link FloatSeekBar}
      */
-    private void setValue(float seekBarValue) {
-        setValueInternal(seekBarValue);
+    private void __setValue(float seekBarValue) {
+        __setValueInternal(seekBarValue);
         if (_floatSeekBar != null) {
             _floatSeekBar.setValue((_value - _minimumValue) / (_maximumValue - _minimumValue));
         }

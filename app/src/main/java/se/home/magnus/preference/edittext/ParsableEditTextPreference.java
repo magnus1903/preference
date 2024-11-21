@@ -61,8 +61,7 @@ public class ParsableEditTextPreference extends EditTextPreference {
     public ParsableEditTextPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws RuntimeException {
         super(context, attributeSet);
         String description, hint, regularExpression;
-        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0);
-        try {
+        try (TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ParsableEditTextPreference, 0, 0)) {
             if ((regularExpression = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableRegularExpression)) == null) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableRegularExpression"));
             }
@@ -72,8 +71,6 @@ public class ParsableEditTextPreference extends EditTextPreference {
             if ((description = typedArray.getString(R.styleable.ParsableEditTextPreference_parsableDescription)) == null) {
                 throw new RuntimeException(getContext().getString(R.string.parsable_edit_text_mandatory_error, "parsableDescription"));
             }
-        } finally {
-            typedArray.recycle();
         }
         // this "setter method" is necessary to "remove" the "preference title" from the "preference dialog"
         setDialogTitle("");

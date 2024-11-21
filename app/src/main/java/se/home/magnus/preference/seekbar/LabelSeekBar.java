@@ -133,11 +133,11 @@ public class LabelSeekBar extends AppCompatSeekBar {
             public void onStopTrackingTouch(@NonNull SeekBar seekBar) {
                 int value;
                 if (_isSeekBarChangeListenerSet) {
-                    value = getLabelIndex(seekBar.getProgress());
+                    value = __getLabelIndex(seekBar.getProgress());
                     setProgress(value * _valueIncrement);
                     _progressListener.onChanged(value);
                     _value = value;
-                    setLabelColors();
+                    __setLabelColors();
                 }
             }
         });
@@ -166,7 +166,7 @@ public class LabelSeekBar extends AppCompatSeekBar {
         for (int i = 0; i < progress.getNumberOfLayers(); i++) {
             progress.setLayerHeight(i, size);
         }
-        setLabelColors();
+        __setLabelColors();
         getProgressDrawable().setTint(color);
         thumb.setTint(thumbColor);
         setThumb(thumb);
@@ -194,7 +194,7 @@ public class LabelSeekBar extends AppCompatSeekBar {
         }
         setProgress(value * _valueIncrement);
         _value = value;
-        setLabelColors();
+        __setLabelColors();
     }
 
     /**
@@ -241,7 +241,7 @@ public class LabelSeekBar extends AppCompatSeekBar {
                 labelContainer.addView(labelView);
                 _labelViewList.add(labelView);
             }
-            setLabelColors();
+            __setLabelColors();
         }
     }
 
@@ -262,7 +262,7 @@ public class LabelSeekBar extends AppCompatSeekBar {
      * Sets the colors of the labels (selected and unselected) guided by the current progress
      * value.
      */
-    private void setLabelColors() {
+    private void __setLabelColors() {
         for (int i = 0; i < _labelViewList.size(); i++) {
             if (_value != i) {
                 _labelViewList.get(i).setTextColor(_context.getColor(R.color.color_secondary_light));
@@ -279,7 +279,7 @@ public class LabelSeekBar extends AppCompatSeekBar {
      *
      * @return a label view list index
      */
-    private int getLabelIndex(int progressValue) {
+    private int __getLabelIndex(int progressValue) {
         float factor;
         for (int i = 0; i < _labelArray.length; i++) {
             factor = 2 * i - 1;

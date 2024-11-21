@@ -90,8 +90,7 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
     public TextSeekBarPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws IllegalArgumentException {
         super(context, attributeSet, 0);
         CharSequence[] valueArray;
-        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.TextSeekBar, 0, 0);
-        try {
+        try (TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.TextSeekBar, 0, 0)) {
             _thumbColor = typedArray.getColor(R.styleable.TextSeekBar_textThumbColor, context.getColor(R.color.color_primary));
             _color = typedArray.getColor(R.styleable.TextSeekBar_textColor, context.getColor(R.color.color_primary));
             _diameter = typedArray.getInt(R.styleable.TextSeekBar_textDiameter, context.getResources().getInteger(R.integer.text_seek_bar_ball_diameter_default_value));
@@ -113,8 +112,6 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
             if (_valueArray.length != _labelArray.length) {
                 throw new IllegalArgumentException(getContext().getString(R.string.generic_seek_bar_value_label_array_error));
             }
-        } finally {
-            typedArray.recycle();
         }
     }
 
@@ -191,20 +188,20 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
      * Sets the default value of this preference.
      */
     public void setDefaultValue() {
-        setValue(_defaultValue);
+        __setValue(_defaultValue);
     }
 
     /**
      * Sets the initial value of this preference.
      *
-     * @param defaultValue the default value for the preference if set, otherwise null XXX
+     * @param defaultValue the default value for the preference if set, otherwise null
      */
     @Override
     protected void onSetInitialValue(Object defaultValue) {
         if (defaultValue == null) {
             defaultValue = _defaultValue;
         }
-        setValue(getPersistedFloat(Float.parseFloat(defaultValue.toString())));
+        __setValue(getPersistedFloat(Float.parseFloat(defaultValue.toString())));
     }
 
     /**
@@ -212,7 +209,7 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
      *
      * @param value the current value which must be an element in the "value array"
      */
-    private void setValue(float value) {
+    private void __setValue(float value) {
         int index;
         if (_labelSeekBar != null) {
             index = -1;

@@ -96,8 +96,7 @@ public class ButtonPreference extends Preference {
         int buttonRadius;
         String value, text;
         Matcher matcher;
-        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ButtonPreference, 0, 0);
-        try {
+        try (TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ButtonPreference, 0, 0)) {
             if ((value = typedArray.getString(R.styleable.ButtonPreference_buttonRadius)) != null) {
                 matcher = Common.DIP_REGULAR_EXPRESSION_PATTERN.matcher(value);
                 if (matcher.find()) {
@@ -117,8 +116,6 @@ public class ButtonPreference extends Preference {
             _backgroundColorOff = typedArray.getColor(R.styleable.ButtonPreference_buttonBackgroundColorOff, context.getColor(R.color.color_secondary_light));
             _buttonRadius = buttonRadius;
             _text = text;
-        } finally {
-            typedArray.recycle();
         }
     }
 
