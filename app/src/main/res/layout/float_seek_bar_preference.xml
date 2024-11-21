@@ -26,6 +26,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:progressDrawable="@drawable/float_seek_bar" />
 
