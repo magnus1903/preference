@@ -169,6 +169,14 @@ public class ParsableEditTextPreference extends EditTextPreference {
     }
 
     /**
+     * Processes a click on the preference and displays a dialog.
+     */
+    @Override
+    protected void onClick() {
+        super.onClick();
+    }
+
+    /**
      * Sets a fragment manager which is used to retrieve the alert dialog of this preference.
      *
      * @param fragmentManager a fragment manager
