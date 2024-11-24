@@ -24,7 +24,7 @@
     <!-- parsable edit text strings -->
     <string name="parsable_edit_text_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="parsable_edit_text_matching_error">The string \"%1$s\" does not match the regular expression \"%2$s\".</string>
-    <string name="parsable_edit_text_missing_error">The layout must contain a text view having the id \"parsed_text\".</string>
+    <string name="parsable_edit_text_missing_error">The layout must contain a text view having the id that is \"parsed_text\".</string>
     <!-- button strings -->
     <string name="button_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="button_dependency_error">The \"mandatory\" attribute \"click listener\" must be assigned.</string>
