@@ -11,11 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="48dp"
-        android:paddingStart="38dp"
-        android:paddingTop="16dp"
-        android:paddingEnd="38dp"
-        android:paddingBottom="16dp"
+        android:paddingStart="48dp"
+        android:paddingEnd="48dp"
         android:text="null"
         android:textAllCaps="false"
         tools:ignore="HardcodedText" />
