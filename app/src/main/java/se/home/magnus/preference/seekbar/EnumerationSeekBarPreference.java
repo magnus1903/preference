@@ -88,7 +88,6 @@ public class EnumerationSeekBarPreference extends Preference implements LabelSee
      */
     public EnumerationSeekBarPreference(@NonNull Context context, @Nullable AttributeSet attributeSet) throws IllegalArgumentException {
         super(context, attributeSet, 0);
-        setLayoutResource(R.layout.label_seek_bar_preference);
         try (TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.EnumerationSeekBar, 0, 0)) {
             _thumbColor = typedArray.getColor(R.styleable.EnumerationSeekBar_enumerationThumbColor, context.getColor(R.color.color_primary));
             _color = typedArray.getColor(R.styleable.EnumerationSeekBar_enumerationColor, context.getColor(R.color.color_primary));
