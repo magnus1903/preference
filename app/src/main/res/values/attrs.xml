@@ -71,4 +71,16 @@
         <!-- the corner radius of the background rectangle expressed in dp -->
         <attr name="buttonRadius" format="string" />
     </declare-styleable>
+    <declare-styleable name="ColorPicker">
+        <!-- the default color in the dialog -->
+        <attr name="colorDefaultColor" format="integer" />
+        <!-- the title in the dialog -->
+        <attr name="colorTitle" format="string" />
+        <!-- the text connected to the selected image in the dialog -->
+        <attr name="colorSelectedText" format="string" />
+        <!-- the resource id of the color picker image in the dialog -->
+        <attr name="colorPickerId" format="reference" />
+        <!-- the resource id of the selected color image in the dialog -->
+        <attr name="colorSelectedId" format="reference" />
+    </declare-styleable>
 </resources>

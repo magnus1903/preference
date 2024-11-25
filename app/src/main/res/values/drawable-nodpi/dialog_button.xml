@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- this "color state selector" is used as the button color for alert dialogs -->
+<!-- in the AlertDialogTheme in style.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/color_secondary_dark" android:state_enabled="true" />
+    <item android:color="@color/color_secondary_light" android:state_enabled="false" />
+    <!-- default state-->
+    <item android:color="@color/color_secondary_light" />
+</selector>

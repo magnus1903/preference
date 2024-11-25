@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- generic strings -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
     <!-- generic seek bar strings -->
     <string name="generic_edit_text_dependency_error">The \"mandatory\" attribute \"fragment manager\" must be assigned.</string>
     <string name="generic_seek_bar_change_dependency_error">The \"mandatory\" attribute \"seek bar change listener\" must be assigned.</string>

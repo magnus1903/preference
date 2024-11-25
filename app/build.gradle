@@ -24,7 +24,7 @@ afterEvaluate {
             libraryProject(MavenPublication) {
                 setGroupId 'com.github.magnus1903'
                 setArtifactId 'preference'
-                version '2.2.32'
+                version '2.2.33'
                 artifact bundleReleaseAar
                 artifact sourcesJar
             }
