@@ -19,7 +19,11 @@ package se.home.magnus.preference.colorpicker;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -65,6 +69,12 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
     private final ColorPickerDialog _dialog;
 
     /**
+     * The selected color image view in this preference. This image view MUST be an "xml drawable"
+     * (see "square.xml" and "circle.xml").
+     */
+    private ImageView _selectedColorImageView;
+
+    /**
      * @param context      the context this view is running in, through which it can access the
      *                     current theme, resources, etc
      * @param attributeSet the attributes of the XML tag that is inflating this view, this value may
@@ -95,6 +105,7 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
     @Override
     public void onBindViewHolder(@NonNull PreferenceViewHolder preferenceViewHolder) {
         super.onBindViewHolder(preferenceViewHolder);
+        int color = getPersistedInt(_defaultColor);
         // the next statement is crucial because, if the "preference view holder" isn't set
         // to be NOT recyclable, all "float seek bar preference" instances will share the same
         // "float seek bar" instance
@@ -103,7 +114,9 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
         _dialog.setSelectedColorPickerImage(_imageSelectedId);
         _dialog.setTitle(_dialogTitle);
         _dialog.setSelectedText(_selectedText);
-        _dialog.setSelectedColor(getPersistedInt(_defaultColor));
+        _dialog.setSelectedColor(color);
+        _selectedColorImageView = (ImageView) preferenceViewHolder.findViewById(R.id.selected_color);
+        ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
     }
 
     /**
@@ -113,7 +126,7 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
      */
     @Override
     public void onChanged(@ColorInt int color) {
-        persistInt(color);
+        __setColor(color);
     }
 
     /**
@@ -141,9 +154,7 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
         if (defaultColor == null) {
             defaultColor = _defaultColor;
         }
-        int DEFAULT_COLOR = Integer.parseInt(defaultColor.toString());
-        int PERSISTENT_INT = getPersistedInt(DEFAULT_COLOR);
-        __setColor(PERSISTENT_INT);
+        __setColor(getPersistedInt(Integer.parseInt(defaultColor.toString())));
     }
 
     /**
@@ -153,6 +164,12 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
      */
     private void __setColor(@ColorInt int color) {
         _dialog.setSelectedColor(color);
+        if (Color.alpha(color) > 0) {
+            ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
+            _selectedColorImageView.setVisibility(View.VISIBLE);
+        } else {
+            _selectedColorImageView.setVisibility(View.INVISIBLE);
+        }
         persistInt(color);
     }
 

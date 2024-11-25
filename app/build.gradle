@@ -34,7 +34,7 @@ afterEvaluate {
 
 android {
     namespace 'se.home.magnus.preference'
-    compileSdk 34
+    compileSdk 35
     defaultConfig {
         minSdk 29
         consumerProguardFiles "consumer-rules.pro"

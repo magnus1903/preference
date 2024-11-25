@@ -128,6 +128,9 @@ public class ColorPickerDialog {
         _alertDialog = builder.create();
     }
 
+    /**
+     * Shows the alert dialog.
+     */
     public void show() {
         if (Color.alpha(_selectedColor) > 0) {
             ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(_selectedColor);
