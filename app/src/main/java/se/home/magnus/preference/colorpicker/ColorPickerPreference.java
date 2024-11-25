@@ -23,7 +23,9 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -115,7 +117,6 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
         _dialog.setTitle(_dialogTitle);
         _dialog.setSelectedText(_selectedText);
         _dialog.setSelectedColor(color);
-        _selectedColorImageView = (ImageView) preferenceViewHolder.findViewById(R.id.selected_color);
         ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
     }
 
@@ -164,11 +165,13 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
      */
     private void __setColor(@ColorInt int color) {
         _dialog.setSelectedColor(color);
-        if (Color.alpha(color) > 0) {
-            ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
-            _selectedColorImageView.setVisibility(View.VISIBLE);
-        } else {
-            _selectedColorImageView.setVisibility(View.INVISIBLE);
+        if (_selectedColorImageView != null) {
+            if (Color.alpha(color) > 0) {
+                ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
+                _selectedColorImageView.setVisibility(View.VISIBLE);
+            } else {
+                _selectedColorImageView.setVisibility(View.INVISIBLE);
+            }
         }
         persistInt(color);
     }
