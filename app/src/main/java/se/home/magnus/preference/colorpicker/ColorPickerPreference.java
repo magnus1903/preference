@@ -22,10 +22,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
@@ -41,7 +38,7 @@ import se.home.magnus.preference.R;
 public class ColorPickerPreference extends DialogPreference implements ColorPickerDialog.OnSelectedListener {
 
     /**
-     * The default color which must be a color in the color picker image in the dialog.
+     * The default color.
      */
     private final int _defaultColor;
 
@@ -117,6 +114,7 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
         _dialog.setTitle(_dialogTitle);
         _dialog.setSelectedText(_selectedText);
         _dialog.setSelectedColor(color);
+        _selectedColorImageView = (ImageView) preferenceViewHolder.findViewById(R.id.selected_color);
         ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
     }
 
@@ -146,34 +144,19 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
     }
 
     /**
-     * Sets the initial color of this preference.
-     *
-     * @param defaultColor the default color for the preference if set, otherwise null
-     */
-    @Override
-    protected void onSetInitialValue(Object defaultColor) {
-        if (defaultColor == null) {
-            defaultColor = _defaultColor;
-        }
-        __setColor(getPersistedInt(Integer.parseInt(defaultColor.toString())));
-    }
-
-    /**
      * Sets the current color and selected color.
      *
      * @param color the current
      */
     private void __setColor(@ColorInt int color) {
-        _dialog.setSelectedColor(color);
         if (_selectedColorImageView != null) {
             if (Color.alpha(color) > 0) {
+                _dialog.setSelectedColor(color);
                 ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
-                _selectedColorImageView.setVisibility(View.VISIBLE);
-            } else {
-                _selectedColorImageView.setVisibility(View.INVISIBLE);
+                persistInt(color);
             }
         }
-        persistInt(color);
     }
 
 }
+

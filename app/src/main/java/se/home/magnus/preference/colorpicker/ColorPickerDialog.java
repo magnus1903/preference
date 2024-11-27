@@ -77,7 +77,6 @@ public class ColorPickerDialog {
         _titleTextView = layout.findViewById(R.id.dialog_title_text);
         _selectedTextView = layout.findViewById(R.id.dialog_selected_color_text);
         _selectedColorImageView = layout.findViewById(R.id.dialog_selected_color_image);
-        _selectedColorImageView.setVisibility(View.INVISIBLE);
         _colorPickerImageView = layout.findViewById(R.id.dialog_color_picker_image);
         _colorPickerImageView.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -86,10 +85,7 @@ public class ColorPickerDialog {
                     try {
                         selectedColor[0] = __getBitmapFromView(_colorPickerImageView).getPixel((int) event.getX(), (int) event.getY());
                         if (Color.alpha(selectedColor[0]) > 0) {
-                            _selectedColorImageView.setVisibility(View.VISIBLE);
                             ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(Color.argb(Color.alpha(selectedColor[0]), Color.red(selectedColor[0]), Color.green(selectedColor[0]), Color.blue(selectedColor[0])));
-                        } else {
-                            _selectedColorImageView.setVisibility(View.INVISIBLE);
                         }
                     } catch (Exception e) {
                         // do nothing
@@ -108,9 +104,11 @@ public class ColorPickerDialog {
              */
             @Override
             public void onClick(@NonNull DialogInterface dialog, int id) {
-                _selectedColor = selectedColor[0];
-                _selectedListener.onChanged(selectedColor[0]);
-                dialog.cancel();
+                if (Color.alpha(selectedColor[0]) > 0) {
+                    _selectedColor = selectedColor[0];
+                    _selectedListener.onChanged(selectedColor[0]);
+                    dialog.cancel();
+                }
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -134,9 +132,6 @@ public class ColorPickerDialog {
     public void show() {
         if (Color.alpha(_selectedColor) > 0) {
             ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(_selectedColor);
-            _selectedColorImageView.setVisibility(View.VISIBLE);
-        } else {
-            _selectedColorImageView.setVisibility(View.INVISIBLE);
         }
         _alertDialog.show();
     }
@@ -186,10 +181,9 @@ public class ColorPickerDialog {
      */
     @SuppressWarnings("JavaDoc")
     public void setSelectedColor(@ColorInt int selectedColor) throws IllegalArgumentException {
-        if (selectedColor != 0) {
-            _selectedColorImageView.setVisibility(View.VISIBLE);
+        if (Color.alpha(selectedColor) > 0) {
+            _selectedColor = selectedColor;
         }
-        _selectedColor = selectedColor;
     }
 
     /**
