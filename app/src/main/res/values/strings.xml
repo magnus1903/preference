@@ -24,10 +24,20 @@
     <string name="label_seek_bar_initiation_error">The number of selectable labels must be at least 2.</string>
     <string name="label_seek_bar_default_error" tools:ignore="UnusedResources">The \"default value\" must not be less than 0 or greater than the number of selectable labels - 1.</string>
     <string name="label_seek_bar_value_error">The value must be a position index in the \"label array\".</string>
+    <!-- color picker strings -->
+    <string name="color_picker_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <!-- parsable edit text strings -->
     <string name="parsable_edit_text_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
-    <string name="parsable_edit_text_matching_error">The string \"%1$s\" does not match the regular expression \"%2$s\".</string>
-    <string name="parsable_edit_text_missing_error">The layout must contain a text view having the id that is \"parsed_text\".</string>
+    <!-- a regular expression declaring valid player name characters -->
+    <string name="parsable_player_name_regular_expression" tools:ignore="TypographyDashes">^[a-zA-Z0-9]{1,6}$</string>
+    <string name="parsable_player_name_title">Player name</string>
+    <string name="parsable_player_name_message">The player name must only consist of letters and numbers and have a minimum length of 1 character and a maximum length of 6 characters.</string>
+    <string name="parsable_player_name_hint">enter your player name</string>
+    <!-- a regular expression declaring valid team name characters -->
+    <string name="parsable_team_name_regular_expression" tools:ignore="TypographyDashes">^[a-zA-Z0-9]{1,6}$</string>
+    <string name="parsable_team_name_title">Team name</string>
+    <string name="parsable_team_name_message">The team name must only consist of letters and numbers and have a minimum length of 1 character and a maximum length of 6 characters.</string>
+    <string name="parsable_team_name_hint">enter your team name</string>
     <!-- button strings -->
     <string name="button_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="button_dependency_error">The \"mandatory\" attribute \"click listener\" must be assigned.</string>

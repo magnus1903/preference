@@ -85,9 +85,13 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
             _dialog = new ColorPickerDialog(context, this);
             _imagePickerId = typedArray.getResourceId(R.styleable.ColorPicker_colorPickerId, -1);
             _imageSelectedId = typedArray.getResourceId(R.styleable.ColorPicker_colorSelectedId, -1);
-            _dialogTitle = typedArray.getString(R.styleable.ColorPicker_colorTitle);
-            _selectedText = typedArray.getString(R.styleable.ColorPicker_colorSelectedText);
             _defaultColor = typedArray.getInt(R.styleable.ColorPicker_colorDefaultColor, R.color.color_primary);
+            if ((_dialogTitle = typedArray.getString(R.styleable.ColorPicker_colorTitle)) == null) {
+                throw new RuntimeException(getContext().getString(R.string.color_picker_mandatory_error, "colorTitle"));
+            }
+            if ((_selectedText = typedArray.getString(R.styleable.ColorPicker_colorSelectedText)) == null) {
+                throw new RuntimeException(getContext().getString(R.string.color_picker_mandatory_error, "colorSelectedText"));
+            }
         }
     }
 
