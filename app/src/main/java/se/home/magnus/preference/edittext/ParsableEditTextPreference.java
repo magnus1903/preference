@@ -106,6 +106,7 @@ public class ParsableEditTextPreference extends EditTextPreference implements Pa
      */
     @Override
     public void onParsed(@NonNull String text) {
+        setText(text);
         persistString(text);
     }
 
