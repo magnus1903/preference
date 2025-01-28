@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "se.home.magnus.preference.app-appcompat-1.7.0-7:/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "se.home.magnus.preference.app-appcompat-1.7.0-7:/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]

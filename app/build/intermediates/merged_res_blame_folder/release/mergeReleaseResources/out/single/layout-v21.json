@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-v21/notification_action.xml",
+        "source": "se.home.magnus.preference.app-core-1.13.0-21:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-v21/notification_template_custom_big.xml",
+        "source": "se.home.magnus.preference.app-core-1.13.0-21:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-v21/notification_action_tombstone.xml",
+        "source": "se.home.magnus.preference.app-core-1.13.0-21:/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-v21/notification_template_icon_group.xml",
+        "source": "se.home.magnus.preference.app-core-1.13.0-21:/layout-v21/notification_template_icon_group.xml"
+    }
+]

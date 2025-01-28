@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-v26/mtrl_calendar_month.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-15:/layout-v26/mtrl_calendar_month.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-v26/abc_screen_toolbar.xml",
+        "source": "se.home.magnus.preference.app-appcompat-1.7.0-7:/layout-v26/abc_screen_toolbar.xml"
+    }
+]

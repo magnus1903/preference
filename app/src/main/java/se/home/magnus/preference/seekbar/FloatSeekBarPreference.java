@@ -123,6 +123,9 @@ public class FloatSeekBarPreference extends Preference {
 
     public FloatSeekBarPreference(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs, 0);
+
+        System.out.println("***** XXXX FloatSeekBarPreference *****");
+
         float value, minimumValue, maximumValue, defaultValue, valueIncrement;
         try (TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FloatSeekBar, 0, 0)) {
             minimumValue = a.getFloat(R.styleable.FloatSeekBar_floatMinimumValue, 0);

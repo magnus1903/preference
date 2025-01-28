@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-15:/layout-sw600dp-v13/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/layout-sw600dp-v13/mtrl_layout_snackbar.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-15:/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
+    }
+]

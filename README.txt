@@ -1,3 +1,9 @@
+        // this is primarily used when building and publishing the "Preference lib" to the
+        // ~/.m2/repository using "./gradlew publishToMavenLocal" in a terminal in the 
+        // "Preference project"
+
+
+
 NAMING CONVENTIONS:
 
 member variabler är "prefixade" med 1 "underscore"

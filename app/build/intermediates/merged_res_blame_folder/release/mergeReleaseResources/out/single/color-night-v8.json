@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/color-night-v8/material_timepicker_button_stroke.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-15:/color-night-v8/material_timepicker_button_stroke.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/color-night-v8/material_timepicker_modebutton_tint.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-15:/color-night-v8/material_timepicker_modebutton_tint.xml"
+    },
+    {
+        "merged": "se.home.magnus.preference.app-release-38:/color-night-v8/material_timepicker_clockface.xml",
+        "source": "se.home.magnus.preference.app-material-1.12.0-15:/color-night-v8/material_timepicker_clockface.xml"
+    }
+]
