@@ -23,7 +23,6 @@
         android:layout_height="40dp"
         android:layout_gravity="center"
         android:clickable="false"
-        android:src="@drawable/circle"
         tools:ignore="ContentDescription" />
 
 

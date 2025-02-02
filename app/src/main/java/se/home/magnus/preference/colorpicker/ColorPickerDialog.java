@@ -52,7 +52,7 @@ public class ColorPickerDialog {
 
     /**
      * The selected color image view in the alert dialog. This image view MUST be an "xml drawable"
-     * (see "square.xml" and "circle.xml").
+     * (see e.g. "square.xml").
      */
     private final ImageView _selectedColorImageView;
 

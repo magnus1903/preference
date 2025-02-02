@@ -9,6 +9,8 @@
     <string name="generic_seek_bar_value_label_array_error">The number of elements in the \"value array\" and the \"label array\" must be the same.</string>
     <string name="generic_seek_bar_value_error">The value must be a position index in the \"value array\".</string>
     <string name="generic_seek_bar_value_array_error">The \"value array\" is missing.</string>
+    <!-- check box strings -->
+    <string name="check_box_preference_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <!-- float seek bar strings -->
     <string name="float_seek_bar_constructor_error">Could not instantiate \"tha float seek bar\" object because its corresponding \"xml-drawable\" could not be loaded.</string>
     <string name="float_seek_bar_initiation_error">The minimum and maximum values cannot be the same and the minimum value cannot be greater than the maximum value.</string>

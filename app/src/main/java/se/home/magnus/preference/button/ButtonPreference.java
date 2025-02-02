@@ -80,7 +80,7 @@ public class ButtonPreference extends Preference {
     /**
      * A "mandatory" click listener which is called when this preference is clicked.
      */
-    View.OnClickListener _clickListener;
+    private View.OnClickListener _clickListener;
 
     /**
      * @param context      the context this preference is running in, through which it can access
@@ -143,7 +143,7 @@ public class ButtonPreference extends Preference {
         preferenceViewHolder.setIsRecyclable(false);
         button = (Button) preferenceViewHolder.findViewById(R.id.button);
         button.setTextColor(_textColor);
-        button.setBackground(getBackground());
+        button.setBackground(__getBackground());
         button.setText(_text);
         button.setOnClickListener(new View.OnClickListener() {
             /**
@@ -204,7 +204,7 @@ public class ButtonPreference extends Preference {
      *
      * @return a state list drawable
      */
-    private Drawable getBackground() {
+    private Drawable __getBackground() {
         StateListDrawable stateListDrawable = new StateListDrawable();
         GradientDrawable buttonBackgroundOn = new GradientDrawable(), buttonBackgroundOff = new GradientDrawable();
         buttonBackgroundOn.setShape(GradientDrawable.RECTANGLE);

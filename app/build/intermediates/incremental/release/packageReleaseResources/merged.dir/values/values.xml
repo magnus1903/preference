@@ -29,6 +29,7 @@
     <string name="button_dependency_error">The \"mandatory\" attribute \"click listener\" must be assigned.</string>
     <string name="button_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="cancel">Cancel</string>
+    <string name="check_box_preference_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="color_picker_mandatory_error">The mandatory attribute \"%1$s\" is missing.</string>
     <string name="enumeration_seek_bar_value_array_error">The \"default value\" is missing.</string>
     <string name="float_seek_bar_constructor_error">Could not instantiate \"tha float seek bar\" object because its corresponding \"xml-drawable\" could not be loaded.</string>
@@ -85,6 +86,14 @@
         <attr format="string" name="buttonText"/>
         
         <attr format="string" name="buttonRadius"/>
+    </declare-styleable>
+    <declare-styleable name="CheckBoxPreference">
+        
+        <attr format="boolean" name="displayPlayerDefaultValue"/>
+        
+        <attr format="reference" name="checkedId"/>
+        
+        <attr format="reference" name="uncheckedId"/>
     </declare-styleable>
     <declare-styleable name="ColorPicker">
         

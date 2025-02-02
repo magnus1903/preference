@@ -69,7 +69,7 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
 
     /**
      * The selected color image view in this preference. This image view MUST be an "xml drawable"
-     * (see "square.xml" and "circle.xml").
+     * (see e.g. "square.xml").
      */
     private ImageView _selectedColorImageView;
 
@@ -119,6 +119,7 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
         _dialog.setSelectedText(_selectedText);
         _dialog.setSelectedColor(color);
         _selectedColorImageView = (ImageView) preferenceViewHolder.findViewById(R.id.selected_color);
+        _selectedColorImageView.setImageResource(_imageSelectedId);
         ((GradientDrawable) _selectedColorImageView.getDrawable()).setColor(color);
     }
 

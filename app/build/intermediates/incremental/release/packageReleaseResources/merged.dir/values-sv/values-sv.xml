@@ -3,6 +3,7 @@
     <string name="button_dependency_error">Det \"obligatoriska\" attributet \"click listener\" måste tilldelas.</string>
     <string name="button_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <string name="cancel">Avbryt</string>
+    <string name="check_box_preference_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <string name="color_picker_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <string name="enumeration_seek_bar_value_array_error">\"Standard värdet\" saknas.</string>
     <string name="float_seek_bar_constructor_error">Kunde inte instantiera \"tha float seek bar\" objektet på grund av att dess motsvarande \"xml-drawable\" inte kunde laddas.</string>

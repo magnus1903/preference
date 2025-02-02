@@ -85,4 +85,12 @@
         <!-- the resource id of the selected color image in the dialog -->
         <attr name="colorSelectedId" format="reference" />
     </declare-styleable>
+    <declare-styleable name="CheckBoxPreference">
+        <!-- the default value on whether or the check boxpreference is checked -->
+        <attr name="displayPlayerDefaultValue" format="boolean" />
+        <!-- the resource id of the "checked" image -->
+        <attr name="checkedId" format="reference" />
+        <!-- the resource id of the "unchecked" image -->
+        <attr name="uncheckedId" format="reference" />
+    </declare-styleable>
 </resources>

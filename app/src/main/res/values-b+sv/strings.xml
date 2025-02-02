@@ -9,6 +9,8 @@
     <string name="generic_seek_bar_value_label_array_error">Antalet element i \"value array\" och \"label array\" måste vara lika.</string>
     <string name="generic_seek_bar_value_error">Värdet måste vara ett positionsindex i \"value array\".</string>
     <string name="generic_seek_bar_value_array_error">Attributet \"value array\" saknas.</string>
+    <!-- check box strings -->
+    <string name="check_box_preference_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <!-- float seek bar strings -->
     <string name="float_seek_bar_constructor_error">Kunde inte instantiera \"tha float seek bar\" objektet på grund av att dess motsvarande \"xml-drawable\" inte kunde laddas.</string>
     <string name="float_seek_bar_initiation_error">Minimum- och maximum-värdet får inte vara lika och minimum-värdet får inte vara större än maximum-värdet.</string>
