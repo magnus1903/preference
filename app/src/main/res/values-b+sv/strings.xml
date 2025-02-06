@@ -28,18 +28,6 @@
     <string name="label_seek_bar_value_error">Värdet måste vara ett positionsindex i \"label array\".</string>
     <!-- color picker strings -->
     <string name="color_picker_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
-    <!-- parsable edit text strings -->
-    <string name="parsable_edit_text_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
-    <!-- a regular expression declaring valid player name characters -->
-    <string name="parsable_player_name_regular_expression" tools:ignore="TypographyDashes">^[a-zåäöA-ZÅÄÖ0-9]{1,6}$</string>
-    <string name="parsable_player_name_title">Spelarnamn</string>
-    <string name="parsable_player_name_message">Spelarnamnet skall bara bestå av bokstäver och siffror och ha en maximal längd av 6 tecken.</string>
-    <string name="parsable_player_name_hint">ange ditt spelarnamn</string>
-    <!-- a regular expression declaring valid team name characters -->
-    <string name="parsable_team_name_regular_expression" tools:ignore="TypographyDashes">^[a-zåäöA-ZÅÄÖ0-9]{1,6}$</string>
-    <string name="parsable_team_name_title">Lagnamn</string>
-    <string name="parsable_team_name_message">Lagnamnet skall bara bestå av bokstäver och siffror och ha en maximal längd av 6 tecken.</string>
-    <string name="parsable_team_name_hint">ange ditt lagnamn</string>
     <!-- button strings -->
     <string name="button_mandatory_error">Det obligatoriska attributet \"%1$s\" saknas.</string>
     <string name="button_dependency_error">Det \"obligatoriska\" attributet \"click listener\" måste tilldelas.</string>

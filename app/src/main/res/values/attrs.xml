@@ -51,16 +51,6 @@
         <!-- the labels of the seek bar -->
         <attr name="enumerationLabels" format="reference" />
     </declare-styleable>
-    <declare-styleable name="ParsableEditText">
-        <!-- the title in the dialog -->
-        <attr name="parsableTitle" format="string" />
-        <!-- the message in the dialog -->
-        <attr name="parsableMessage" format="string" />
-        <!-- the hint in the dialog -->
-        <attr name="parsableHint" format="string" />
-        <!-- the regular expression in the dialog -->
-        <attr name="parsableRegularExpression" format="string" />
-    </declare-styleable>
     <declare-styleable name="ButtonPreference">
         <!-- the color of the background rectangle in "on mode" (i.e. when it is pressed) -->
         <attr name="buttonBackgroundColorOn" format="color" />

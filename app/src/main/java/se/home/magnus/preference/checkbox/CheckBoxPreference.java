@@ -123,4 +123,13 @@ public class CheckBoxPreference extends androidx.preference.CheckBoxPreference {
         persistBoolean(_isCheckedDefault);
     }
 
+    /**
+     * Returns the checked state, i.e. whether this check box preference is checked or not.
+     *
+     * @return the checked state
+     */
+    public boolean isChecked() {
+        return getPersistedBoolean(_isCheckedDefault);
+    }
+
 }

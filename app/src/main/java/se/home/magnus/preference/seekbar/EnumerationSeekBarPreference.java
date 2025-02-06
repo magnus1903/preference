@@ -165,6 +165,15 @@ public class EnumerationSeekBarPreference extends Preference implements LabelSee
     }
 
     /**
+     * Returns the enumeration option, as a string, of this preference.
+     *
+     * return the enumeration option, of this preference
+     */
+    public String getValue() {
+        return getPersistedString(_defaultValue);
+    }
+
+    /**
      * Sets the color of the seek bar of this preference.
      *
      * @param color a color

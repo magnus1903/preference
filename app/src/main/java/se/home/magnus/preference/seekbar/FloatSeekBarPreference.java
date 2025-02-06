@@ -224,6 +224,15 @@ public class FloatSeekBarPreference extends Preference {
         __setValue(_defaultValue);
     }
 
+    /**
+     * Returns the value of this preference.
+     * <p>
+     * return the value of this preference
+     */
+    public float getValue() {
+        return getPersistedFloat(_defaultValue);
+    }
+
     @Override
     protected void onSetInitialValue(Object defaultValue) {
         if (defaultValue == null) {

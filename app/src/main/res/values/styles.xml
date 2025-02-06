@@ -1,15 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="ApplicationTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="editTextPreferenceStyle">@style/ParsableEditTextTheme</item>
-    </style>
-
-    <style name="ParsableEditTextTheme" parent="Preference.DialogPreference.EditTextPreference">
-        <item name="android:textSize">40sp</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
+    <style name="ApplicationTheme" parent="Theme.AppCompat.Light.NoActionBar" />
 
     <style name="AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
         <item name="android:textColor">@android:color/black</item>

@@ -192,6 +192,15 @@ public class TextSeekBarPreference extends Preference implements LabelSeekBar.On
     }
 
     /**
+     * Returns the value of this preference.
+     *
+     * return the value of this preference
+     */
+    public float getValue() {
+        return getPersistedFloat(_defaultValue);
+    }
+
+    /**
      * Sets the initial value of this preference.
      *
      * @param defaultValue the default value for the preference if set, otherwise null

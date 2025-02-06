@@ -149,6 +149,15 @@ public class ColorPickerPreference extends DialogPreference implements ColorPick
     }
 
     /**
+     * Returns the color of this preference.
+     *
+     * return the color of this preference
+     */
+    public @ColorInt int getColor() {
+        return getPersistedInt(_defaultColor);
+    }
+
+    /**
      * Sets the current color and selected color.
      *
      * @param color the current
