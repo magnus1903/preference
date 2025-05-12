@@ -16,6 +16,7 @@
 		-> Click on Create repository
 			
 		-> Click on Publish repository -> Click on Publish repository
+			Keep this code private = "unchecked"
 	
 - Releases:
 
