@@ -1,6 +1,6 @@
 - Publish local repository :
 
-	NOTE, if the "Android Studio project" previously has been a local repository, 
+	NOTE NOTE NOTE, if the "Android Studio project" previously has been a local repository, 
 	the first thing to do is to remove the ".git" map, the ".gitattributes" and ".gitignore" files (if they exist).
 
 	GitHub DeskTop
@@ -18,10 +18,14 @@
 		-> Click on Publish repository -> Click on Publish repository
 			Keep this code private = "unchecked"
 	
+NOTE NOTE NOTE, don't commit anything this is done when creating a new tag (under "Releases")	
+	
 - Releases:
 
 	GitHub Desktop allows you to create annotated tags. Tags are associated with commits, so you can use a tag 
 	to mark an individual point in your repository's history, including a version number for a release.
+	
+	Apart from creating a new tag this will also commit the changes and IMPORTANTLY create and aar- and pom-file.
 
 	GitHub Desktop 
 	
@@ -41,5 +45,3 @@
 		-> Click on Commit...
 		
 		-> Click on Push origin on the "second top bar"
-
-xxxxx
