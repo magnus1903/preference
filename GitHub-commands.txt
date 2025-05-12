@@ -1,0 +1,44 @@
+- Publish local repository :
+
+	NOTE, if the "Android Studio project" previously has been a local repository, 
+	the first thing to do is to remove the ".git" map, the ".gitattributes" and ".gitignore" files (if they exist).
+
+	GitHub DeskTop
+	
+		-> File -> New repository...
+			Name = "preference"
+			Description = "a library of custom android preferences"
+			Local path = "D:\Sandbox\AndroidStudioProjects"
+			Initialize this repository with a README = "unchecked"
+			Git ignore = "Android" (from the drop-down menu)
+			Licence = "None"
+			
+		-> Click on Create repository
+			
+		-> Click on Publish repository -> Click on Publish repository
+	
+- Releases:
+
+	GitHub Desktop allows you to create annotated tags. Tags are associated with commits, so you can use a tag 
+	to mark an individual point in your repository's history, including a version number for a release.
+
+	GitHub Desktop 
+	
+		-> In the left sidebar, click History
+		
+		-> 	Right click on the "Initial commit"
+		
+			Chose Create Tag...
+				Name = "the version number in build.gradle"
+				
+				->	Click on Create tag
+				
+			GitHub Desktop displays an arrow  if the tag has not been pushed to the remote repository
+
+		-> In the left sidebar, click Changes
+			
+		-> Click on Commit...
+		
+		-> Click on Push origin on the "second top bar"
+
+xxxxx

@@ -1,0 +1,58 @@
+//see "libs.versions.toml
+
+plugins {
+    alias(libs.plugins.androidLibrary)
+    id 'maven-publish'
+}
+
+tasks.register('sourcesJar', Jar) {
+    archiveClassifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+// if using "./gradlew publishToMavenLocal" when building this library it will accessed
+// as a dependency using the "mavenLocal()" repository" (se the Petanque project) otherwise
+// if the "./gradlew publish" is working the repository "maven { url("https://jitpack.io") }"
+// is sufficient
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                setGroupId 'com.github.magnus1903'
+                setArtifactId 'preference'
+                version '4.0.9'
+                artifact bundleReleaseAar
+                artifact sourcesJar
+            }
+        }
+    }
+}
+android {
+    namespace 'se.home.magnus.preference'
+    compileSdk 35
+    defaultConfig {
+        minSdk 29
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.preference
+}
