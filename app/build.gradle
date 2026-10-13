@@ -1,0 +1,62 @@
+//see "libs.versions.toml
+
+plugins {
+    alias(libs.plugins.androidLibrary)
+    id 'maven-publish'
+}
+
+tasks.register('sourcesJar', Jar) {
+    archiveClassifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+artifacts {
+    archives sourcesJar
+}
+
+// the preferred approach when building and publishing this "library" to "JitPack" is to follow the
+// instructions in README.txt, it can then be accessed as a dependency using the "JitPack repository"
+// (se the Petanque project)
+//
+// FOR TESTING: if using "./gradlew publishToMavenLocal" in a terminal, in this project, when building
+// this "library" it will be published to ~/.m2/repository and can be accessed as a dependency using
+// the "mavenLocal() repository" (se the Petanque project)
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                setGroupId 'com.github.magnus1903'
+                setArtifactId 'preference'
+                version '4.2.13'
+                artifact bundleReleaseAar
+                artifact sourcesJar
+            }
+        }
+    }
+}
+android {
+    namespace 'se.home.magnus.preference'
+    compileSdk 37
+    defaultConfig {
+        minSdk 29
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.preference
+}
